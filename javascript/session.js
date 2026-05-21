@@ -1,3 +1,9 @@
+// Función para obtener el prefijo de ruta dinámico según el nivel de carpeta
+function getPathPrefix() {
+    const path = window.location.pathname.replace(/\\/g, '/');
+    return path.includes('/html/') ? '../' : '';
+}
+
 // Función para verificar si el usuario está logueado
 function checkUserSession() {
     const username = localStorage.getItem('username');
@@ -11,15 +17,18 @@ function checkUserSession() {
 
 function showUserProfile(username) {
     const loginContainer = document.getElementById('login-container');
+    if (!loginContainer) return;
+    
+    const prefix = getPathPrefix();
     loginContainer.innerHTML = `
-        <div class="user-profile" onclick="toggleDropdown()">
-            <img src="../imagenes/ftperfil.png" alt="Foto de perfil" class="avatar">
+        <div class="user-profile" onclick="toggleDropdown(event)">
+            <img src="${prefix}imagenes/ftperfil.png" alt="Foto de perfil" class="avatar">
             <span class="username">${username}</span>
             <div class="dropdown-menu" id="dropdown-menu">
                 <p>${username}</p>
-                <img src="../imagenes/ftperfil.png" alt="Perfil" class="profile-image avatar">
-                <a href="../html/perfil.html">Perfil</a>
-                <a href="#" onclick="logout()">Cerrar sesión</a>
+                <img src="${prefix}imagenes/ftperfil.png" alt="Perfil" class="profile-image">
+                <a href="${prefix}html/perfil.html">Perfil</a>
+                <a href="#" onclick="logout(event)">Cerrar sesión</a>
             </div>
         </div>
     `;
@@ -28,8 +37,11 @@ function showUserProfile(username) {
 // Función para mostrar el botón de inicio de sesión
 function showLoginButton() {
     const loginContainer = document.getElementById('login-container');
+    if (!loginContainer) return;
+    
+    const prefix = getPathPrefix();
     loginContainer.innerHTML = `
-        <a href="../html/login.html" class="login-btn">Iniciar sesión <span class="arrow">→</span></a>
+        <a href="${prefix}html/login.html" class="login-btn">Iniciar sesión <span class="arrow">→</span></a>
     `;
 }
 
@@ -38,8 +50,8 @@ function showAccessDeniedMessage() {
     const message = document.getElementById('access-denied-message');
     const overlay = document.getElementById('overlay');
 
-    overlay.classList.add('show');  // Mostrar fondo oscuro
-    message.classList.add('show');  // Mostrar el mensaje emergente
+    if (overlay) overlay.classList.add('show');  // Mostrar fondo oscuro
+    if (message) message.classList.add('show');  // Mostrar el mensaje emergente
 }
 
 // Ocultar mensaje de acceso denegado
@@ -47,22 +59,27 @@ function hideAccessDeniedMessage() {
     const message = document.getElementById('access-denied-message');
     const overlay = document.getElementById('overlay');
 
-    message.classList.remove('show');
-    overlay.classList.remove('show');
+    if (message) message.classList.remove('show');
+    if (overlay) overlay.classList.remove('show');
 }
 
 // Función para alternar el menú desplegable de usuario
-function toggleDropdown() {
+function toggleDropdown(event) {
+    if (event) event.stopPropagation(); // Evita que se propague al listener global
     const dropdownMenu = document.getElementById('dropdown-menu');
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    if (dropdownMenu) {
+        dropdownMenu.classList.toggle('open');
+    }
 }
 
 // Función para cerrar sesión
-function logout() {
+function logout(event) {
+    if (event) event.preventDefault();
     localStorage.removeItem('username');
     localStorage.removeItem('role');
     showLoginButton();
-    window.location.href = '../html/login.html'; // Redirige a la página de inicio de sesión
+    const prefix = getPathPrefix();
+    window.location.href = prefix + 'html/login.html'; // Redirige a la página de inicio de sesión
 }
 
 // Función para restringir el acceso a los simuladores
@@ -87,26 +104,33 @@ function handleCommentSubmission(event) {
         const overlay = document.getElementById('overlay');
         const popup = document.getElementById('popup');
 
-        overlay.style.display = 'block'; // Mostrar fondo oscuro
-        popup.style.display = 'block';   // Mostrar ventana emergente
+        if (overlay) overlay.style.display = 'block'; // Mostrar fondo oscuro
+        if (popup) popup.style.display = 'block';   // Mostrar ventana emergente
 
         // Manejar el botón de iniciar sesión
-        document.getElementById('loginButton').onclick = function() {
-            window.location.href = '../html/login.html';
-        };
+        const loginButton = document.getElementById('loginButton');
+        if (loginButton) {
+            loginButton.onclick = function() {
+                const prefix = getPathPrefix();
+                window.location.href = prefix + 'html/login.html';
+            };
+        }
 
         // Manejar el botón de regresar al foro
-        document.getElementById('backButton').onclick = function() {
-            overlay.style.display = 'none'; // Ocultar fondo oscuro
-            popup.style.display = 'none';   // Ocultar ventana emergente
-        };
+        const backButton = document.getElementById('backButton');
+        if (backButton) {
+            backButton.onclick = function() {
+                if (overlay) overlay.style.display = 'none'; // Ocultar fondo oscuro
+                if (popup) popup.style.display = 'none';   // Ocultar ventana emergente
+            };
+        }
 
         const responderButton = document.querySelector('.nueva-respuesta .responder-btn');
-    if (responderButton) {
-        responderButton.onclick = function(event) {
-            handleCommentSubmission(event);
-        };
-    }
+        if (responderButton) {
+            responderButton.onclick = function(e) {
+                handleCommentSubmission(e);
+            };
+        }
     } else {
         // Si el usuario está logueado, permitir que el comentario se envíe normalmente
         return true;
@@ -122,11 +146,11 @@ function restrictCourseAccess(event) {
 }
 
 // Comprobar el estado de la sesión al cargar la página
-window.onload = function() {
+window.addEventListener('load', function() {
     checkUserSession();
 
     // Añadir verificación de acceso al botón "Empezar Curso"
-    const startCourseButtons = document.querySelectorAll('.btn-inscripcion[href="../html/curso1.html"], .btn-inscripcion[href="../html/curso2.html"]');
+    const startCourseButtons = document.querySelectorAll('.btn-inscripcion[href="../html/curso1.html"], .btn-inscripcion[href="../html/curso2.html"], .btn-inscripcion[href="html/curso1.html"], .btn-inscripcion[href="html/curso2.html"]');
     startCourseButtons.forEach(button => {
         button.addEventListener('click', restrictCourseAccess);
     });
@@ -140,7 +164,8 @@ window.onload = function() {
     const loginButton = document.getElementById('loginButton');
     if (loginButton) {
         loginButton.onclick = function() {
-            window.location.href = '../html/login.html'; // Redirigir a la página de inicio de sesión
+            const prefix = getPathPrefix();
+            window.location.href = prefix + 'html/login.html'; // Redirigir a la página de inicio de sesión
         };
     }
 
@@ -151,4 +176,14 @@ window.onload = function() {
             hideAccessDeniedMessage(); // Ocultar la ventana emergente
         };
     }
-};
+
+    // Cerrar el dropdown al hacer clic fuera
+    window.addEventListener('click', function(e) {
+        const profile = document.querySelector('.user-profile');
+        const dropdown = document.getElementById('dropdown-menu');
+        if (profile && dropdown && !profile.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+});
+

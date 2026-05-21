@@ -1,11 +1,4 @@
-/* Estilos para la página de inicio de sesión */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1a094a;
-    color: white;
-}
+
 
 .login-container {
     display: flex;

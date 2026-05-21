@@ -1,26 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #003366; /* Azul oscuro */
-    padding: 10px 20px;
-    color: white;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-right: 20px;
-}
 
 .nav-links li a {
     color: white;
@@ -83,11 +61,4 @@ h1, h2, h3 {
 
 .resources li {
     margin-bottom: 10px;
-}
-
-footer {
-    background-color: #003366; /* Azul oscuro */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
 }

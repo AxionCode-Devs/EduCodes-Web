@@ -1,13 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a094a;
-    color: #ffffff;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+
 
 .login-container {
     background-color: rgba(92, 225, 230, 0.1);
@@ -45,22 +36,6 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
-
-.login-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #5ce1e6;
-    border: none;
-    color: #1a094a;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.login-btn:hover {
-    background-color: #4bc5d5; /* Color al pasar el ratón */
 }
 
 .extra-options {
