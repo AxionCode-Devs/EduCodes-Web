@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCodes - Simulador Java</title>
+    <link rel="stylesheet" href="../css/javaSimulador.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="../javascript/javaSimulador.js" defer></script>
+    <script src="../javascript/session.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>
+            </ul>
+            <div id="login-container"></div>
+        </nav>
+    </header>
+
+    <main class="simulator-container">
+        <h1>Simulador Java <span class="emoji">☕</span></h1>
+        <div class="code-area">
+            <div class="editor-header">
+                <span>Código Java</span>
+                <button id="run-button" class="run-btn">Ejecutar Código ▶</button>
+            </div>
+            <textarea id="code-editor">
+// Escribe tu código Java aquí
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("¡Hola Mundo!");
+    }
+}
+            </textarea>
+        </div>
+        <div class="output-area">
+            <div class="output-header">
+                <span>Resultado</span>
+                <button id="clear-button" class="clear-btn">Limpiar 🗑️</button>
+            </div>
+            <div id="output"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

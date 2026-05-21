@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrar Sesión - EduCodes</title>
+    <script>
+        window.onload = function() {
+            // Eliminar el nombre de usuario y rol de localStorage
+            localStorage.removeItem('username');
+            localStorage.removeItem('role');
+            // Redirigir a la página principal
+            window.location.href = '../index.html';
+        };
+    </script>
+</head>
+<body>
+    <p>Cerrando sesión...</p>
+</body>
+</html>

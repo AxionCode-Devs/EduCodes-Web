@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCodes - Plataforma de Aprendizaje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="javascript/session.js"></script>
+    <script src="javascript/chatbot.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="html/cursos.html">Cursos</a></li>
+                <li><a href="html/simuladores.html">Simuladores</a></li>
+                <li><a href="html/planes.html">Planes</a></li>
+                <li><a href="html/foros.html">Foros</a></li>
+                <li><a href="html/consultas.html">Consultas</a></li>
+            </ul>
+            <div id="login-container"></div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-box">
+            <div class="hero-content">
+                <h1>ALTO NIVEL DE APRENDIZAJE</h1>
+                <p>Diseñada para ayudarte a desarrollar habilidades en programación y redes. Ofrecemos módulos interactivos, foros colaborativos y simuladores prácticos para que aprendas de forma dinámica y efectiva. ¡Únete a nuestra comunidad y potencia tu aprendizaje con contenido actualizado y soporte personalizado!</p>
+            </div>
+            <div class="hero-image">
+                <img src="imagenes/Codigo_inicio.jpg" alt="Código en la pantalla">
+            </div>
+        </div>
+    </section>
+
+    <section class="join-cooperative">
+        <div class="join-box">
+            <div class="join-content">
+                <h2>Hazte Miembro de EduCodes</h2>
+                <p>Forma parte de una cooperativa que impulsa la educación tecnológica. EduCodes te brinda la oportunidad de crecer y colaborar con otros apasionados de la programación. Aporta tus ideas, aprende en equipo y ayuda a construir una comunidad donde el conocimiento sea accesible para todos. ¡Da el primer paso y únete hoy mismo!</p>
+                <button class="btn-primary" onclick="window.location.href='html/inscripcion.html'">Inscribirme</button>
+            </div>
+            <div class="join-image">
+                <img src="imagenes/equipo.jpg" alt="Únete a nuestra cooperativa">
+            </div>
+        </div>
+    </section>
+
+    <div id="chatbot">
+        <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+        <div id="chatbot-window" class="hidden">
+            <div id="chatbot-header">
+                <h3>Chatbot EduCodes</h3>
+                <button onclick="toggleChatbot()">✖</button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="message bot-message">Hola, ¿cómo puedo ayudarte hoy?</div>
+            </div>
+            <div id="chatbot-input">
+                <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

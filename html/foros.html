@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCodes - Foros</title>
+    <link rel="stylesheet" href="../css/foros.css">
+    <script src="../javascript/session.js"></script>
+    <script src="../javascript/chatbot.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+        </nav>
+    </header>
+
+    <section class="join-foros">
+        <h2>¡Únete y Consulta nuestros Foros!</h2>
+        <p>Conéctate con nuestra comunidad de programadores, aprende de otros y resuelve tus dudas. Explora temas de tecnología y programación.</p>
+    </section>
+
+    <section class="foro-preview">
+        <div class="foro-grid">
+            <a href="../html/foro1.html" class="foro-card">
+                <img src="../imagenes/frameworks.png" alt="Tema 1">
+                <h3>Frameworks para Desarrollo Web: ¿Cuál elegir?</h3>
+                <p>Descubre las ventajas y desventajas de los frameworks más populares como React, Angular y Vue.</p>
+                <span>Publicado por DevMaster / 15 de septiembre de 2024</span>
+            </a>
+            <a href="../html/foro2.html" class="foro-card">
+                <img src="../imagenes/seguridadweb.png" alt="Tema 2">
+                <h3>Mejores Prácticas en Seguridad Web</h3>
+                <p>Aprende cómo proteger tus sitios web contra vulnerabilidades comunes y ataques cibernéticos.</p>
+                <span>Publicado por CyberSecGuru / 12 de septiembre de 2024</span>
+            </a>
+            <a href="../html/foro3.html" class="foro-card">
+                <img src="../imagenes/autopython.jpg" alt="Tema 3">
+                <h3>Automatización con Python: Guía Completa</h3>
+                <p>Explora cómo automatizar tareas repetitivas usando scripts en Python de manera eficiente.</p>
+                <span>Publicado por PythonPro / 10 de septiembre de 2024</span>
+            </a>
+        </div>
+    </section>
+
+    <div id="chatbot">
+        <!-- Ícono flotante -->
+        <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+        
+        <!-- Ventana del chatbot (inicialmente oculta) -->
+        <div id="chatbot-window" class="hidden">
+            <div id="chatbot-header">
+                <h3>Chatbot EduCodes</h3>
+                <button onclick="toggleChatbot()">✖</button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="message bot-message">Hola, ¿cómo puedo ayudarte hoy?</div>
+            </div>
+            <div id="chatbot-input">
+                <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+    
+</body>
+</html>

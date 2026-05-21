@@ -1,0 +1,489 @@
+/* Estilos generales del body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a094a; /* Fondo de la página */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Estilos del header */
+header {
+    background-color: #1a094a; /* Fondo del header */
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+    background-color: #3b237e; /* Color al pasar el ratón */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos del navbar dentro del header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: inherit; /* Hereda el color del header */
+    padding: 0;
+}
+
+/* Estilos para el logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 20px; /* Cambia el tamaño aquí */
+    color: white; /* Puedes ajustar el color si lo deseas */
+    margin: 0; /* Elimina el margen si es necesario */
+}
+
+.logo img {
+    width: 85px;
+    height: 85px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.15);
+    filter: brightness(1.3);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Estilos de los enlaces del navbar */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e6e6e6;
+    transform: scale(1.05);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.login-btn {
+    background-color: #ffffff;
+    color: #1a094a;
+    border: none;
+    padding: 8px 20px; /* Ajustar tamaño del botón */
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-4px); /* Efecto hover */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn .arrow {
+    margin-left: 5px;
+}
+
+/* Estilo del perfil del usuario */
+.user-profile {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+}
+
+.user-profile .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.user-profile .username {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user-profile:hover .dropdown-menu {
+    display: block; /* Mostrar el menú desplegable cuando se pasa por encima */
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 200px;
+    padding: 10px;
+}
+
+.dropdown-menu p {
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    border-top: 1px solid #eaeaea;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Imagen de perfil dentro del menú desplegable */
+.dropdown-menu .dropdown-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Estilos del main y simuladores */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.simuladores {
+    text-align: center;
+}
+
+.simulador {
+    background-color: #2b1e5e; /* Color mejorado para el fondo del simulador */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra ajustada */
+    transition: transform 0.3s ease;
+}
+
+.simulador:hover {
+    transform: scale(1.02);
+}
+
+.simulador img {
+    max-width: 100%; /* Imagen ajustable */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.simulador h3 {
+    color: #f0f0f0;
+}
+
+.simulador p {
+    color: #d0d0d0;
+    font-size: 16px;
+}
+
+.btn-simulador {
+    background-color: #ffffff;
+    color: #1a094a;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-simulador:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #0d0524;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    color: #c2c2f0;
+    font-size: 14px;
+}
+
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Estilo del ícono flotante */
+#chatbot-icon {
+    background-color: #FF6F61; /* Color coral */
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 28px; /* Tamaño del ícono */
+}
+
+#chatbot-icon:hover {
+    background-color: #FF4A3B; /* Color coral más oscuro */
+    transform: scale(1.1);
+}
+
+/* Estilo de la ventana del chatbot */
+#chatbot-window {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 12px;
+    width: 400px; /* Aumentar el ancho */
+    max-height: 600px; /* Aumentar la altura máxima */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(10px); /* Desplazado hacia abajo */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición para apertura */
+}
+
+/* Animación de apertura */
+#chatbot-window.open {
+    opacity: 1; /* Hacer visible */
+    transform: translateY(0); /* Regresar a su posición original */
+}
+
+/* Efecto de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo del encabezado del chatbot */
+#chatbot-header {
+    background-color: #FF6F61; /* Color coral */
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Estilo de los mensajes */
+#chatbot-messages {
+    padding: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #F9F9F9; /* Fondo gris claro */
+}
+
+/* Estilo de los mensajes del usuario */
+.message.user-message {
+    background-color: #007BFF; /* Fondo azul fuerte */
+    color: white; /* Texto blanco */
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    align-self: flex-end; /* Alinea a la derecha */
+    max-width: 75%; /* Ancho máximo */
+    word-wrap: break-word; /* Para que el texto no se desborde */
+}
+
+/* Estilo de los mensajes del bot */
+.message.bot-message {
+    background-color: #EAEAEA; /* Fondo gris claro */
+    color: #333; /* Texto oscuro */
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    align-self: flex-start; /* Alinea a la izquierda */
+    max-width: 75%; /* Ancho máximo */
+    word-wrap: break-word; /* Para que el texto no se desborde */
+}
+
+/* Estilo del área de entrada del usuario */
+#chatbot-input {
+    display: flex;
+    padding: 12px;
+    background-color: #F7F7F7; /* Fondo gris muy claro */
+    border-top: 1px solid #E0E0E0; /* Línea de separación */
+}
+
+/* Estilo del campo de entrada del usuario */
+#user-input {
+    flex-grow: 1;
+    border: 1px solid #ddd; /* Borde gris */
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+/* Estilo del botón de enviar */
+#chatbot-input button {
+    background-color: #FF6F61; /* Botón coral */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#chatbot-input button:hover {
+    background-color: #FF4A3B; /* Color coral más oscuro al pasar el mouse */
+}
+
+/* Esconder la ventana del chatbot */
+#chatbot-window.hidden {
+    display: none;
+    opacity: 0; /* Invisible */
+    transform: translateY(10px); /* Desplazado hacia abajo */
+}
+
+/* Fondo oscuro */
+#overlay {
+    display: none; /* Inicialmente no se muestra */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo con opacidad */
+    z-index: 1000; /* Asegúrate de que esté encima */
+}
+
+/* Estilo de la ventana emergente */
+.access-denied-message {
+    display: none; /* Inicialmente no se muestra */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a094a; /* Color de fondo morado oscuro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+    z-index: 1100; /* Asegúrate de que esté encima */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Mostrar la ventana con animación */
+.access-denied-message.show {
+    display: block; /* Cambia a bloque cuando se muestra */
+    opacity: 1; /* Hacer visible */
+    transform: translate(-50%, -50%) scale(1); /* Mantener posición central */
+}
+
+/* Texto del mensaje */
+.access-denied-message p {
+    color: #5ce1e6; /* Color del texto */
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Botones */
+.access-denied-buttons {
+    display: flex;
+    justify-content: space-between; /* Espacio entre botones */
+}
+
+.access-denied-button {
+    background-color: #5ce1e6; /* Color de fondo de los botones */
+    color: #1a094a; /* Color del texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.access-denied-button:hover {
+    background-color: #4ac0c9; /* Color de fondo al pasar el ratón */
+}
+
+/* Animación para el fondo */
+#overlay.show {
+    display: block; /* Cambia a bloque cuando se muestra */
+    animation: fadeIn 0.3s ease; /* Añadir animación */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

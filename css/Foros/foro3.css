@@ -1,0 +1,368 @@
+/* Estilos generales del body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a094a; /* Color de fondo oscuro */
+    color: white; /* Color del texto */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+/* Estilos del header */
+header {
+    background-color: #1a094a;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+    background-color: #3b237e; /* Color de fondo al pasar el mouse */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos del navbar dentro del header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: inherit; /* Hereda el color del header */
+    padding: 0; /* Ajusta el padding si es necesario */
+}
+
+/* Estilos para el logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 20px; 
+    color: white;
+    margin: 0; 
+}
+
+.logo img {
+    width: 85px; 
+    height: 85px; 
+    margin-right: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.15);
+    filter: brightness(1.3);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Estilos de los enlaces del navbar */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e6e6e6; /* Color de texto al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff; /* Color de la línea inferior */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Estilo del botón de inicio de sesión */
+.login-btn {
+    background-color: #ffffff;
+    color: #1a094a;
+    border: none;
+    padding: 8px 20px; 
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #f0f0f0; /* Color del botón al pasar el mouse */
+    transform: translateY(-4px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn .arrow {
+    margin-left: 5px;
+}
+
+/* Estilo del perfil del usuario */
+.user-profile {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+}
+
+.user-profile .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.user-profile .username {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user-profile:hover .dropdown-menu {
+    display: block; 
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ffffff; /* Color de fondo del menú */
+    color: #333; /* Color del texto del menú */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 200px;
+    padding: 10px;
+}
+
+.dropdown-menu p {
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 0;
+    color: #333; /* Color del texto de los enlaces */
+    text-decoration: none;
+    border-top: 1px solid #eaeaea;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0; /* Color del fondo al pasar el mouse */
+}
+
+/* Imagen de perfil dentro del menú desplegable */
+.dropdown-menu .dropdown-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos de la sección del foro */
+.foro {
+    background-color: #240e5f; /* Color de fondo del foro */
+    padding: 40px 20px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    margin: 20px; /* Margen externo */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+/* Estilo del título del foro */
+.foro h1 {
+    font-size: 32px; /* Tamaño del título */
+    color: white; /* Color del título */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilo de los párrafos dentro del foro */
+.foro p {
+    font-size: 16px; /* Tamaño del texto */
+    color: #c2c2f0; /* Color del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo de los encabezados dentro del foro */
+.foro h2 {
+    font-size: 24px; /* Tamaño del subtítulo */
+    color: white; /* Color del subtítulo */
+    margin-top: 20px; /* Margen superior */
+}
+
+/* Estilo de las listas dentro del foro */
+.foro ul {
+    list-style-type: disc; /* Tipo de lista */
+    margin-left: 20px; /* Margen izquierdo */
+}
+
+/* Espacio para imágenes */
+.espacio-imagen {
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo */
+    padding: 20px; /* Espaciado interno */
+    border: 2px dashed #c2c2f0; /* Borde */
+    margin-top: 20px; /* Margen superior */
+    text-align: center; /* Alineación del texto */
+    color: #c2c2f0; /* Color del texto */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Sección de comentarios */
+.comentarios {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente para la sección de comentarios */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.comentario {
+    border-bottom: 1px solid #5ce1e6; /* Línea separadora entre comentarios */
+    padding: 10px 0; /* Espaciado interno */
+    color: #e0e0e0; /* Color del texto del comentario */
+}
+
+.nombre {
+    font-weight: bold; /* Negrita para el nombre del usuario */
+    color: #5ce1e6; /* Color para resaltar el nombre del usuario */
+}
+
+.texto-comentario {
+    color: #e0e0e0; /* Color del texto del comentario */
+    display: block; /* Hace que el texto del comentario esté en una nueva línea */
+    margin-top: 5px; /* Espacio entre el nombre y el comentario */
+}
+
+/* Estilo del campo de entrada para comentarios */
+.input-comentario {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Margen superior */
+}
+
+.boton-comentario {
+    background-color: #5ce1e6; /* Color del botón */
+    color: #2a1a6e; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-comentario:hover {
+    background-color: #4ab0c7; /* Color del botón al pasar el mouse */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #1a094a; /* Color de fondo del pie de página */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Alineación centrada */
+}
+
+/* Estilos para los enlaces del pie de página */
+footer a {
+    color: #5ce1e6; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+/* Ventana emergente */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a094a; /* Color de fondo oscuro */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-out; /* Animación de la ventana */
+}
+
+/* Animación */
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* Botones en la ventana emergente */
+.popup-buttons {
+    margin-top: 20px;
+}
+
+.popup-button {
+    background-color: #5ce1e6;
+    border: none;
+    color: #1a094a;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-button:hover {
+    background-color: #4ab9b8;
+}

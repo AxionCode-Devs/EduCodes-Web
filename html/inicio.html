@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Nosotros</title>
+    <link rel="stylesheet" href="/css/inicio.css"> 
+    <script>
+        window.onload = function() {
+            const role = localStorage.getItem('role'); // Verifica el rol del usuario
+            if (role !== 'admin') {
+                alert('Acceso denegado.'); // Si no es admin, muestra alerta
+                window.location.href = '../html/login.html'; // Redirige a la página de login
+            }
+        };
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.removeItem('username'); // Elimina el nombre de usuario
+            localStorage.removeItem('role'); // Elimina el rol
+            window.location.href = '../html/login.html'; // Redirigir a la página de login
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo Plataforma">
+                <h1>Plataforma de Aprendizaje</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="gestcursos.html">Cursos</a></li>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+            </ul>
+            <a href="#" class="login-btn">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="about-container">
+            <h2>Nosotros</h2>
+            <p>Bienvenido a nuestra plataforma de aprendizaje, donde nos dedicamos a ofrecer los mejores cursos y recursos para ayudar a los estudiantes a alcanzar sus objetivos académicos.</p>
+            <p>Nuestra misión es facilitar el acceso a una educación de calidad, promoviendo un aprendizaje continuo y adaptable a las necesidades de cada estudiante.</p>
+            <p>Contamos con un equipo de expertos que se esfuerzan por brindar un ambiente de aprendizaje innovador y enriquecedor.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Aprendizaje. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

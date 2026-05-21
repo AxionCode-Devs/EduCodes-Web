@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simuladores - EduCodes</title>
+    <link rel="stylesheet" href="../css/simuladores.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../javascript/session.js"></script>
+    <script src="../javascript/chatbot.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="simuladores">
+            <h2>Simuladores Disponibles</h2>
+            <div class="simulador">
+                <img src="../imagenes/pythonsimulador.png" alt="Simulador de Python">
+                <h3>Simulador de Python</h3>
+                <p>Experimenta con la programación en Python directamente desde tu navegador. ¡Prueba tu código y observa los resultados!</p>
+                <a href="../html/pythonSimulador.html" class="btn-simulador">Acceder al Simulador</a>
+            </div>
+            <div class="simulador">
+                <img src="../imagenes/javasimulador.jpg" alt="Simulador de Java">
+                <h3>Simulador de Java</h3>
+                <p>Experimenta con la programación en Java directamente desde tu navegador. ¡Prueba tu código y observa los resultados!</p>
+                <a href="../html/javaSimulador.html" class="btn-simulador">Acceder al Simulador</a>
+            </div>
+        </div>
+    </main>
+
+
+
+    <div id="overlay" class="overlay"></div>
+    <div id="access-denied-message" class="access-denied-message">
+        <p>No tienes acceso a esta sección. Por favor, inicia sesión para continuar.</p>
+        <div class="access-denied-buttons">
+            <button class="access-denied-button" onclick="window.location.href='/index.html'">Regresar</button>
+            <button class="access-denied-button" onclick="window.location.href='../html/login.html'">Iniciar sesión</button>
+        </div>
+    </div>
+    
+
+
+
+    <div id="chatbot">
+        <!-- Ícono flotante -->
+        <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+        
+        <!-- Ventana del chatbot (inicialmente oculta) -->
+        <div id="chatbot-window" class="hidden">
+            <div id="chatbot-header">
+                <h3>Chatbot EduCodes</h3>
+                <button onclick="toggleChatbot()">✖</button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="message bot-message">Hola, ¿cómo puedo ayudarte hoy?</div>
+            </div>
+            <div id="chatbot-input">
+                <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EduCodes - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

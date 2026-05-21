@@ -1,0 +1,207 @@
+:root {
+    /* Paleta de colores */
+    --bg-main: #120630;
+    --bg-secondary: #1a094a;
+    --bg-card: linear-gradient(135deg, #1a094a, #2a155c);
+    --bg-hover: #3b237e;
+    
+    --accent-primary: #FF6F61;
+    --accent-hover: #FF4A3B;
+    
+    --text-main: #ffffff;
+    --text-muted: #c2c2f0;
+    
+    /* Efectos Glassmorphism */
+    --glass-bg: rgba(26, 9, 74, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    
+    /* Sombras Premium */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 20px rgba(255, 111, 97, 0.4);
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset y tipografía base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar estilizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--bg-secondary);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-hover);
+}
+
+/* Componentes Genéricos: Header / Navbar */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 40px;
+    transition: var(--transition-normal);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 50px; /* Reducido para verse más fino en un navbar sticky */
+    height: 50px;
+    transition: var(--transition-normal);
+}
+
+.logo h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: var(--transition-fast);
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-primary);
+    transition: var(--transition-fast);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Botones Base */
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--bg-main);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Footer Base */
+footer {
+    background-color: var(--bg-secondary);
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    border-top: 1px solid var(--glass-border);
+}
+
+footer a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+footer a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* Ajuste general por el header fixed */
+main, section:first-of-type {
+    padding-top: 100px;
+}

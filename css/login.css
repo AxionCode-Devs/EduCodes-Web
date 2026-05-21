@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a094a;
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: rgba(92, 225, 230, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Ancho fijo */
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.slogan {
+    font-size: 0.9em;
+    color: #5ce1e6;
+    margin-top: 5px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5ce1e6;
+    border: none;
+    color: #1a094a;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #4bc5d5; /* Color al pasar el ratón */
+}
+
+.extra-options {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.extra-options a {
+    color: #5ce1e6;
+    text-decoration: none;
+}
+
+.extra-options a:hover {
+    text-decoration: underline;
+}
+
+.regresar-btn {
+    position: fixed; /* Posición fija para que esté en la esquina */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la izquierda */
+    background-color: #5ce1e6; /* Color de fondo del botón */
+    color: #1a094a; /* Color del texto */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.regresar-btn:hover {
+    background-color: #4ac0c9; /* Color al pasar el ratón */
+}
+
+.register-prompt {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.register-prompt a {
+    color: #5ce1e6; /* Color del enlace */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.register-prompt a:hover {
+    color: #4ac0c9; /* Color del enlace al pasar el mouse */
+}

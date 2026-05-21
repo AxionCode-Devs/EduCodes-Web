@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCodes - Consulta Individual</title>
+    <link rel="stylesheet" href="../css/vistaconsulta1.css">
+    <script src="../javascript/session.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+        </nav>
+    </header>
+
+    <main class="consulta-container">
+        <section class="pregunta-seccion">
+            <div class="pregunta-header">
+                <h2>Eduardo012 pregunta:</h2>
+                <span class="fecha">Publicado el 9 de octubre, 2024</span>
+            </div>
+            <h1>¿Cómo puedo leer un archivo de texto línea por línea en Python?</h1>
+            <p class="descripcion">Estoy trabajando en un proyecto donde necesito procesar un archivo de texto línea por línea. ¿Alguien podría explicarme la forma más eficiente de hacerlo en Python?</p>
+        </section>
+
+        <section class="respuestas-seccion">
+            <h3>Respuestas</h3>
+            
+            <div class="respuesta profesional">
+                <div class="respuesta-header">
+                    <h4>MaríaTech <span class="etiqueta">Profesional</span></h4>
+                    <span class="fecha">Respondido el 9 de octubre, 2024</span>
+                </div>
+                <p>Hola Eduardo012, para leer un archivo de texto línea por línea en Python, puedes utilizar un bucle for junto con el método open(). Aquí tienes un ejemplo:</p>
+                <pre><code>
+with open('nombre_archivo.txt', 'r') as archivo:
+    for linea in archivo:
+        # Procesa cada línea
+        print(linea.strip())
+                </code></pre>
+                <p>Este método es eficiente porque lee el archivo línea por línea, sin cargar todo el contenido en la memoria a la vez.</p>
+            </div>
+
+            <div class="respuesta">
+                <div class="respuesta-header">
+                    <h4>CarlosP</h4>
+                    <span class="fecha">Respondido el 10 de octubre, 2024</span>
+                </div>
+                <p>Gracias MaríaTech por la explicación. Quisiera agregar que si necesitas más control sobre la lectura, también puedes usar el método readline():</p>
+                <pre><code>
+with open('nombre_archivo.txt', 'r') as archivo:
+    linea = archivo.readline()
+    while linea:
+        # Procesa la línea
+        print(linea.strip())
+        linea = archivo.readline()
+                </code></pre>
+            </div>
+
+            <div class="respuesta cooperativa">
+                <div class="respuesta-header">
+                    <h4>AnaSoporte</h4>
+                    <span class="fecha">Respondido el 10 de octubre, 2024</span>
+                </div>
+                <p>Excelentes respuestas. Para complementar, si estás trabajando con archivos muy grandes y te preocupa el rendimiento, podrías considerar usar la biblioteca 'fileinput':</p>
+                <pre><code>
+import fileinput
+
+for linea in fileinput.input(['nombre_archivo.txt']):
+    # Procesa cada línea
+    print(linea.strip())
+                </code></pre>
+                <p>Esta opción es particularmente útil cuando necesitas procesar múltiples archivos o cuando el archivo es muy grande.</p>
+            </div>
+        </section>
+
+        <section class="nueva-respuesta">
+            <h3>Añadir una respuesta</h3>
+            <form onsubmit="handleCommentSubmission(event)"> <!-- Asegúrate de que el formulario tenga este atributo -->
+                <textarea placeholder="Escribe tu respuesta aquí..."></textarea>
+                <button type="submit" class="responder-btn">Enviar</button>
+            </form> <!-- Cierra el formulario aquí -->
+            <div id="overlay" class="overlay" style="display:none;"></div>
+            <div id="popup" class="popup" style="display:none;">
+                <h2>Acceso Denegado</h2>
+                <p>Debes iniciar sesión para dejar una respuesta.</p>
+                <div class="popup-buttons">
+                    <button id="loginButton" class="popup-button">Iniciar Sesión</button>
+                    <button id="backButton" class="popup-button">Regresar</button>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #003366; /* Azul oscuro */
+    padding: 10px 20px;
+    color: white;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.admin-content {
+    padding: 20px;
+}
+
+.admin-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cta-btn {
+    background-color: #ffd700; /* Amarillo dorado */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    background-color: #b8860b; /* Amarillo más oscuro */
+}
+
+h1, h2, h3 {
+    color: #003366; /* Azul oscuro */
+}
+
+/* Estilo para la imagen del logo */
+.logo-img {
+    width: 103px; /* Ajusta el tamaño como desees */
+    height: auto; /* Mantiene la proporción */
+}
+
+.resources {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #003366; /* Azul oscuro */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

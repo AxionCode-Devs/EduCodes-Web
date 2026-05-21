@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCodes - Consultas</title>
+    <link rel="stylesheet" href="../css/consultas.css">
+    <script src="../javascript/session.js"></script>
+    <script src="../javascript/chatbot.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+
+        </nav>
+    </header>
+
+    <section class="foro-section">
+        <h1>¡Escribe tu duda o pregunta y recibe ayuda de la comunidad!</h1>
+        <div class="pregunta-container">
+            <input type="text" placeholder="Escribe tu pregunta aquí" class="pregunta-input">
+            <button hreff class="pregunta-btn">→</button>
+        </div>
+        <h2>Consulta temas y dudas de otros usuarios</h2>
+        <div class="temas-container">
+            <div class="tema-card">
+                <h3>Eduardo012</h3>
+                <p>¿Cómo puedo leer un archivo de texto línea por línea en Python?</p>
+                <a href="../html/vistaconsulta1.html" class="tema-btn">→</a>
+            </div>
+            <div class="tema-card">
+                <h3>RobertoCar22</h3>
+                <p>¿Cómo puedo mejorar la seguridad de mi sitio web?</p>
+                <button class="tema-btn">→</button>
+            </div>
+            <div class="tema-card">
+                <h3>JuanjitoGamer503</h3>
+                <p>¿Cómo puedo depurar errores en mi código de JavaScript?</p>
+                <button class="tema-btn">→</button>
+            </div>
+            <div class="tema-card">
+                <h3>TechGuru92</h3>
+                <p>¿Cómo manejo las dependencias en un proyecto de Python?</p>
+                <button class="tema-btn">→</button>
+            </div>
+            <div class="tema-card">
+                <h3>CodeNinjaX</h3>
+                <p>¿Qué es la programación orientada a objetos?</p>
+                <button class="tema-btn">→</button>
+            </div>
+            <div class="tema-card">
+                <h3>NetWizard89</h3>
+                <p>¿Cuál es la diferencia entre una clase abstracta y una interfaz en Java?</p>
+                <button class="tema-btn">→</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="chatbot">
+        <!-- Ícono flotante -->
+        <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+        
+        <!-- Ventana del chatbot (inicialmente oculta) -->
+        <div id="chatbot-window" class="hidden">
+            <div id="chatbot-header">
+                <h3>Chatbot EduCodes</h3>
+                <button onclick="toggleChatbot()">✖</button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="message bot-message">Hola, ¿cómo puedo ayudarte hoy?</div>
+            </div>
+            <div id="chatbot-input">
+                <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

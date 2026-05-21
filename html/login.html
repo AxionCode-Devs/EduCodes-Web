@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - EduCodes</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <script>
+        // Simulación de usuarios para login
+        const users = {
+            estudiante: { username: 'estudiante', password: '1234', role: 'estudiante' },
+            admin: { username: 'admin', password: 'admin123', role: 'admin' }
+        };
+
+        function login(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verificar si el usuario existe y la contraseña es correcta
+            if (users[username] && users[username].password === password) {
+                // Guardar en localStorage el nombre de usuario y rol
+                localStorage.setItem('username', users[username].username);
+                localStorage.setItem('role', users[username].role);
+
+                // Redirigir dependiendo del rol
+                if (users[username].role === 'estudiante') {
+                    window.location.href = '../index.html'; // Redirigir a la página principal de estudiante
+                } else if (users[username].role === 'admin') {
+                    window.location.href = '../html/gestcursos.html'; // Redirigir a la página de administración
+                }
+            } else {
+                alert('Usuario o contraseña incorrectos.');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Iniciar sesión</h2>
+            <p class="slogan">Bienvenido a EduCodes</p>
+        </div>
+        <form onsubmit="login(event)">
+            <div class="input-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="login-btn">Iniciar sesión</button>
+            </div>
+            <div class="register-prompt">
+                <p>No tienes cuenta? <a href="../html/registrar.html">Regístrate</a></p>
+            </div>
+            
+            <div class="extra-options">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <a href="../index.html" class="regresar-btn">Regresar</a>
+
+        </form>
+    </div>
+</body>
+</html>

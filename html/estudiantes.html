@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="/css/estudiantes.css">
+    <script src="../js/auth.js" defer></script>
+    <script>
+        window.onload = function() {
+            const role = localStorage.getItem('role'); // Verifica el rol del usuario
+            if (role !== 'admin') {
+                alert('Acceso denegado.'); // Si no es admin, muestra alerta
+                window.location.href = '../html/login.html'; // Redirige a la página de login
+            }
+        };
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.removeItem('username'); // Elimina el nombre de usuario
+            localStorage.removeItem('role'); // Elimina el rol
+            window.location.href = '../html/login.html'; // Redirigir a la página de login
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo Plataforma">
+                <h1>Admin Plataforma</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="gestcursos.html">Cursos</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+            </ul>
+            <a href="#" class="login-btn" onclick="logout()">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <section class="admin-content">
+        <div class="admin-box">
+            <h2>Gestión de Estudiantes</h2>
+            <div class="admin-grid">
+                <div class="admin-item">
+                    <h3>Añadir Estudiantes</h3>
+                    <form action="agregar_estudiante.html" method="post">
+                        <label for="nombre-estudiante">Nombre del Estudiante:</label>
+                        <input type="text" id="nombre-estudiante" name="nombre-estudiante" required>
+                        <label for="email-estudiante">Email del Estudiante:</label>
+                        <input type="email" id="email-estudiante" name="email-estudiante" required>
+                        <button type="submit" class="cta-btn">Añadir Estudiante</button>
+                    </form>
+                </div>
+                <div class="admin-item">
+                    <h3>Ver Estudiantes</h3>
+                    <p>Gestiona la lista de estudiantes, añadiendo o eliminando usuarios.</p>
+                    <a href="#" class="cta-btn">Ver Estudiantes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Aprendizaje. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Foros/foro1.css">
+    <title>EduCodes - Foro: Frameworks para Desarrollo Web</title>
+    <script src="../javascript/session.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+        </div>
+    </header>
+
+    <div class="foro">
+        <h1>Frameworks para Desarrollo Web: ¿Cuál elegir?</h1>
+        <p>Descubre las ventajas y desventajas de los frameworks más populares como React, Angular y Vue. Esta discusión te ayudará a tomar una decisión informada sobre qué tecnología utilizar en tu próximo proyecto de desarrollo web.</p>
+
+        <h2>Introducción</h2>
+        <p>En el mundo del desarrollo web, la elección del framework correcto puede determinar el éxito de un proyecto. Cada framework tiene su propio conjunto de características, ventajas y desventajas. En este foro, analizaremos en profundidad tres de los frameworks más populares: React, Angular y Vue.js. También discutiremos otros aspectos importantes como la comunidad, la facilidad de uso y la escalabilidad.</p>
+        <img src="../imagenes/frameworks.png" alt="Introducción a Frameworks" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>1. React</h2>
+        <p>React es una biblioteca de JavaScript para construir interfaces de usuario. Desarrollada por Facebook, es conocida por su enfoque en la creación de componentes reutilizables y su rendimiento optimizado.</p>
+        <h3>Características Principales</h3>
+        <ul>
+            <li><strong>Componentes Reutilizables:</strong> Permiten la construcción de interfaces de usuario más complejas de manera sencilla.</li>
+            <li><strong>Virtual DOM:</strong> Aumenta la eficiencia y mejora el rendimiento de las aplicaciones al minimizar el acceso al DOM real.</li>
+            <li><strong>Unidireccionalidad de Datos:</strong> Facilita el manejo del estado y hace que el flujo de datos sea más predecible.</li>
+        </ul>
+        <h3>Ventajas</h3>
+        <ul>
+            <li>Rendimiento excelente gracias al Virtual DOM.</li>
+            <li>Gran comunidad y ecosistema de herramientas.</li>
+            <li>Facilidad para crear aplicaciones de una sola página (SPA).</li>
+            <li>Compatible con otros frameworks y bibliotecas.</li>
+        </ul>
+        <h3>Desventajas</h3>
+        <ul>
+            <li>Curva de aprendizaje pronunciada para principiantes.</li>
+            <li>Requiere el uso de otras bibliotecas para la gestión de estado.</li>
+            <li>Frecuencia de actualizaciones que pueden llevar a problemas de compatibilidad.</li>
+        </ul>
+        <img src="../imagenes/Foros Imagenes/foro1_react.png" alt="React" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>2. Angular</h2>
+        <p>Angular es un framework de desarrollo web de código abierto mantenido por Google. Proporciona un enfoque completo para el desarrollo de aplicaciones web, integrando diversas herramientas y patrones.</p>
+        <h3>Características Principales</h3>
+        <ul>
+            <li><strong>Arquitectura MVC:</strong> Mejora la organización del código y permite un desarrollo más estructurado.</li>
+            <li><strong>Inyección de Dependencias:</strong> Facilita la gestión de dependencias entre componentes.</li>
+            <li><strong>Herramientas Integradas:</strong> Viene con herramientas para pruebas y construcción de aplicaciones.</li>
+        </ul>
+        <h3>Ventajas</h3>
+        <ul>
+            <li>Gran cantidad de recursos y documentación disponible.</li>
+            <li>Fácil integración con otros servicios de Google.</li>
+            <li>Soporte para pruebas unitarias desde el inicio.</li>
+        </ul>
+        <h3>Desventajas</h3>
+        <ul>
+            <li>Mayor tamaño del archivo y tiempo de carga en comparación con otros frameworks.</li>
+            <li>Curva de aprendizaje complicada debido a su extensa funcionalidad.</li>
+            <li>Puede ser excesivo para aplicaciones simples.</li>
+        </ul>
+        <img src="../imagenes/Foros Imagenes/foro1_angular.jpg" alt="Angular" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>3. Vue.js</h2>
+        <p>Vue.js es un framework progresivo para construir interfaces de usuario. Es fácil de integrar con otros proyectos y tiene un tamaño de archivo reducido.</p>
+        <h3>Características Principales</h3>
+        <ul>
+            <li><strong>Flexibilidad:</strong> Permite a los desarrolladores usar tanto el enfoque basado en componentes como el enfoque basado en plantillas.</li>
+            <li><strong>Reactividad:</strong> Facilita la actualización automática de la interfaz de usuario en respuesta a los cambios en el modelo de datos.</li>
+            <li><strong>Herramientas de Desarrollo:</strong> Incluye herramientas para pruebas y un ecosistema de bibliotecas que complementan su uso.</li>
+        </ul>
+        <h3>Ventajas</h3>
+        <ul>
+            <li>Simplicidad y facilidad de uso para principiantes.</li>
+            <li>Documentación clara y bien organizada.</li>
+            <li>Posibilidad de adoptar de manera incremental.</li>
+            <li>Comunidad creciente y activa.</li>
+        </ul>
+        <h3>Desventajas</h3>
+        <ul>
+            <li>Menor soporte y comunidad en comparación con React y Angular.</li>
+            <li>Problemas de escalabilidad en proyectos grandes.</li>
+            <li>Algunas herramientas avanzadas pueden ser difíciles de entender.</li>
+        </ul>
+        <img src="../imagenes/Foros Imagenes/foro1_vue.jpg" alt="Vue" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>Comparativa Resumida</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <tr>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: #3b237e; color: white;">Framework</th>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: #3b237e; color: white;">Ventajas</th>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: #3b237e; color: white;">Desventajas</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">React</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Rendimiento, componentes reutilizables.</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Curva de aprendizaje, gestión de estado adicional.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Angular</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Estructura, herramientas integradas.</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Tamaño, complejidad.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Vue</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Simplicidad, flexibilidad.</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Menor soporte en comparación.</td>
+            </tr>
+        </table>
+
+        <h2>Comentarios</h2>
+        <div class="comentarios">
+            <div class="comentario">
+                <p class="nombre">JuanjitoGamer503:</p>
+                <p class="texto">Me encanta React por su rendimiento. He trabajado en varios proyectos y la reutilización de componentes es un gran plus.</p>
+            </div>
+            <div class="comentario">
+                <p class="nombre">Eusoj21:</p>
+                <p class="texto">Angular es muy poderoso, pero siento que la curva de aprendizaje es bastante alta. A veces es abrumador.</p>
+            </div>
+            <div class="comentario">
+                <p class="nombre">ete_pepe:</p>
+                <p class="texto">Vue es genial para proyectos pequeños. Es fácil de aprender y tiene una comunidad muy amigable.</p>
+            </div>
+        </div>
+        <form class="form-comentario" onsubmit="handleCommentSubmission(event)">
+            <h3>Deja tu comentario:</h3>
+            <textarea class="input-comentario" placeholder="Escribe tu comentario aquí..." required></textarea>
+            <button type="submit" class="boton-comentario">Enviar</button>
+        </form>
+        <div id="overlay" class="overlay" style="display:none;"></div>
+        <div id="popup" class="popup" style="display:none;">
+            <h2>Acceso Denegado</h2>
+            <p>Debes iniciar sesión para dejar un comentario.</p>
+            <div class="popup-buttons">
+            <button id="loginButton" class="popup-button">Iniciar Sesión</button>
+            <button id="backButton" class="popup-button">Regresar</button>
+    </div>
+</div>
+
+    
+
+    <footer>
+        <p>© 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

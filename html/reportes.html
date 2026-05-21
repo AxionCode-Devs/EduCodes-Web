@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Reportes</title>
+    <link rel="stylesheet" href="/css/reportes.css">
+    <script src="../js/auth.js" defer></script> 
+    <script>
+        window.onload = function() {
+            const role = localStorage.getItem('role'); // Verifica el rol del usuario
+            if (role !== 'admin') {
+                alert('Acceso denegado.'); // Si no es admin, muestra alerta
+                window.location.href = '../html/login.html'; // Redirige a la página de login
+            }
+        };
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.removeItem('username'); // Elimina el nombre de usuario
+            localStorage.removeItem('role'); // Elimina el rol
+            window.location.href = '../html/login.html'; // Redirigir a la página de login
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo Plataforma">
+                <h1>Admin Plataforma</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="gestcursos.html">Cursos</a></li>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+            </ul>
+            <a href="#" class="login-btn" onclick="logout()">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <section class="admin-content">
+        <div class="admin-box">
+            <h2>Generar Reportes</h2>
+            <div class="admin-grid">
+                <div class="admin-item">
+                    <h3>Reportes de Cursos</h3>
+                    <p>Genera reportes detallados de los cursos y el progreso de los estudiantes.</p>
+                    <a href="#" class="cta-btn">Generar Reporte</a>
+                </div>
+                <div class="admin-item">
+                    <h3>Reportes de Estudiantes</h3>
+                    <p>Obtén reportes de los estudiantes, incluyendo rendimiento y asistencia.</p>
+                    <a href="#" class="cta-btn">Generar Reporte</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Aprendizaje. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cursos</title>
+    <link rel="stylesheet" href="../css/gestcursos.css"> 
+    <script src="../js/auth.js" defer></script> 
+    <script>
+        window.onload = function() {
+            const role = localStorage.getItem('role'); // Verifica el rol del usuario
+            if (role !== 'admin') {
+                alert('Acceso denegado.'); // Si no es admin, muestra alerta
+                window.location.href = '../html/login.html'; // Redirige a la página de login
+            }
+        };
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.removeItem('username'); // Elimina el nombre de usuario
+            localStorage.removeItem('role'); // Elimina el rol
+            window.location.href = '../html/login.html'; // Redirigir a la página de login
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo Plataforma" class="logo-img">
+                <h1>Admin Plataforma</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+            </ul>
+            <a href="#" class="login-btn" onclick="logout()">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <section class="admin-content">
+        <div class="admin-box">
+            <h2>Gestión de Cursos</h2>
+            <div class="admin-grid">
+                <div class="admin-item">
+                    <h3>Añadir Materias al Curso</h3>
+                    <form action="agregar_materia.html" method="post">
+                        <label for="nombre-curso">Nombre del Curso:</label>
+                        <input type="text" id="nombre-curso" name="nombre-curso" required>
+                        <label for="materia">Materia a Añadir:</label>
+                        <input type="text" id="materia" name="materia" required>
+                        <button type="submit" class="cta-btn">Añadir Materia</button>
+                    </form>
+                </div>
+                <div class="admin-item">
+                    <h3>Ver Cursos Existentes</h3>
+                    <p>Gestiona los cursos existentes, añade o elimina materias.</p>
+                    <a href="#" class="cta-btn">Ver Cursos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="resources">
+            <h2>Recursos para Estudiantes</h2>
+            <ul>
+                <li><strong>Python:</strong> 
+                    <a href="https://www.python.org/doc/" target="_blank">Documentación oficial de Python</a>
+                </li>
+                <li><strong>Java:</strong> 
+                    <a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank">Documentación oficial de Java</a>
+                </li>
+                <li><strong>Codecademy:</strong> 
+                    <a href="https://www.codecademy.com/" target="_blank">Cursos interactivos de programación</a>
+                </li>
+                <li><strong>W3Schools:</strong> 
+                    <a href="https://www.w3schools.com/" target="_blank">Tutoriales de desarrollo web</a>
+                </li>
+                <li><strong>Coursera:</strong> 
+                    <a href="https://www.coursera.org/" target="_blank">Cursos online de universidades</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Aprendizaje. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

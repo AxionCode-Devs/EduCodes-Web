@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Programación</title>
+    <link rel="stylesheet" href="../css/curso1.css">
+    <script src="../javascript/curso1.js" defer></script>
+    <script src="../javascript/session.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+
+        </nav>
+    </header>
+    <main>
+        <section id="parte1">
+            <h2>Parte 1: Introducción a la Programación</h2>
+            <h3>1. ¿Qué es la Programación?</h3>
+            <p>
+                La programación es el proceso de escribir instrucciones que una computadora
+                puede entender y ejecutar. Estas instrucciones, escritas en un lenguaje de
+                programación, le indican a la máquina cómo realizar tareas específicas, desde
+                cálculos simples hasta operaciones complejas como el control de sistemas,
+                procesamiento de datos o creación de aplicaciones.
+            </p>
+            <p>
+                El propósito principal de la programación es resolver problemas mediante la
+                creación de soluciones automatizadas. Los programadores diseñan algoritmos,
+                que son secuencias de pasos lógicos que permiten resolver dichos problemas, y
+                los implementan en un lenguaje que la computadora puede interpretar.
+            </p>
+            <p>
+                En términos más simples, la programación es la manera en que "hablamos" con
+                las computadoras para que realicen tareas específicas, como mostrar una página
+                web, realizar cálculos o controlar un robot.
+            </p>
+            <h3>2. Historia y Evolución de los Lenguajes de Programación</h3>
+            <h4>Década de 1940 - Primeros Lenguajes de Programación</h4>
+            <p>
+                Los primeros lenguajes de programación surgieron junto con las primeras
+                computadoras. Estos lenguajes eran extremadamente simples y se utilizaban para
+                controlar directamente el hardware de las máquinas.
+            </p>
+            <ul>
+                <li><strong>Código Máquina:</strong> El código más básico, formado por instrucciones en
+                    binario (0s y 1s), que son directamente entendidas por la computadora.</li>
+                <li><strong>Lenguajes Ensambladores:</strong> Introdujeron un nivel de abstracción al permitir
+                    escribir instrucciones con nombres simbólicos en lugar de binarios.</li>
+            </ul>
+            <h4>Década de 1950 - Primeros Lenguajes de Alto Nivel</h4>
+            <p>
+                A medida que las computadoras evolucionaron, los programadores necesitaban
+                lenguajes más fáciles de usar. Los lenguajes de alto nivel permitían escribir código
+                más cercano al lenguaje humano, simplificando el proceso.
+            </p>
+            <ul>
+                <li><strong>Fortran (1957):</strong> Desarrollado por IBM, fue uno de los primeros lenguajes de
+                    alto nivel y se utilizó principalmente para aplicaciones científicas y
+                    matemáticas.</li>
+                <li><strong>COBOL (1959):</strong> Creado para aplicaciones comerciales, facilitaba la
+                    programación en empresas y gobiernos.</li>
+            </ul>
+            <h4>Década de 1970 - Desarrollo de Lenguajes Modernos</h4>
+            <p>
+                La creación de lenguajes con sintaxis más clara y estructurada impulsó el
+                desarrollo de lenguajes modernos.
+            </p>
+            <ul>
+                <li><strong>C (1972):</strong> Desarrollado en Bell Labs, influyó en la mayoría de los lenguajes
+                    de programación actuales. Su eficiencia y flexibilidad lo convirtieron en un
+                    estándar para sistemas operativos y software de bajo nivel.</li>
+                <li><strong>Pascal (1970):</strong> Utilizado en la enseñanza de la programación debido a su
+                    simplicidad y estructura clara.</li>
+            </ul>
+            <h4>Década de 1990 - Internet y Programación Web</h4>
+            <p>
+                Con la explosión de Internet, surgieron nuevos lenguajes orientados al desarrollo
+                web.
+            </p>
+            <ul>
+                <li><strong>Java (1995):</strong> Fue diseñado para ser portátil y ejecutarse en cualquier
+                    dispositivo. Se convirtió en un lenguaje clave para aplicaciones
+                    empresariales y móviles.</li>
+                <li><strong>JavaScript (1995):</strong> Introducido para programar interacciones en páginas
+                    web. Sigue siendo esencial en el desarrollo de aplicaciones web dinámicas.</li>
+            </ul>
+            <h4>Década de 2000 y más allá - Lenguajes Modernos y Especialización</h4>
+            <p>
+                La evolución de las necesidades tecnológicas y la popularización de dispositivos
+                móviles han llevado al desarrollo de nuevos lenguajes y frameworks.
+            </p>
+            <ul>
+                <li><strong>Python (1991):</strong> Se ha convertido en uno de los lenguajes más populares
+                    por su simplicidad y versatilidad, utilizado en inteligencia artificial, ciencia de
+                    datos y desarrollo web.</li>
+                <li><strong>Swift (2014):</strong> Creado por Apple para el desarrollo de aplicaciones iOS y
+                    macOS.</li>
+            </ul>
+            <h3>3. Herramientas y Entornos de Desarrollo</h3>
+            <p>
+                El proceso de programación se realiza dentro de herramientas llamadas Entornos
+                de Desarrollo Integrado (IDE). Un IDE es un software que proporciona todas las
+                herramientas necesarias para escribir, probar y depurar código.
+            </p>
+            <h4>Componentes principales de un IDE:</h4>
+            <ul>
+                <li>Editor de código: Es donde los programadores escriben el código.</li>
+                <li>Compilador/Intérprete: Convierte el código fuente en código máquina que
+                    puede ser ejecutado por la computadora.</li>
+                <li>Depurador: Ayuda a identificar y corregir errores en el código.</li>
+                <li>Control de versiones: Facilita la gestión de diferentes versiones del código
+                    a lo largo del desarrollo.</li>
+            </ul>
+            <h4>Algunas herramientas populares son:</h4>
+            <ul>
+                <li><strong>Visual Studio Code:</strong> Un editor de código multiplataforma, ligero y
+                    extensible, que soporta una amplia gama de lenguajes.</li>
+                <li><strong>PyCharm:</strong> Un IDE dedicado a Python, ideal para el desarrollo de
+                    aplicaciones en este lenguaje.</li>
+                <li><strong>Eclipse:</strong> Muy popular para Java, es un IDE potente que también
+                    soporta otros lenguajes con plugins.</li>
+                <li><strong>IntelliJ IDEA:</strong> Un IDE muy utilizado para Java, con muchas
+                    funciones para facilitar el desarrollo rápido y eficiente.</li>
+            </ul>
+            <h3>4. Instalación y Configuración del Entorno de Desarrollo (Python/Java/C#)</h3>
+            <h4>Instalación y Configuración para Python:</h4>
+            <ol>
+                <li>Descargar Python: Visita <a class="enlaces" href="https://www.python.org">python.org</a> y descarga la versión más reciente
+                    para tu sistema operativo.</li>
+                <li>Instalar Python: Sigue las instrucciones del instalador y asegúrate de
+                    marcar la opción "Add Python to PATH" durante la instalación.</li>
+                <li>Instalar un IDE: Descarga Visual Studio Code o PyCharm para escribir y
+                    ejecutar código Python.</li>
+                <li>Prueba de Instalación: Abre una terminal o consola, escribe <code>python --version</code>
+                    y asegúrate de que aparece la versión instalada.</li>
+            </ol>
+            <h4>Instalación y Configuración para Java:</h4>
+            <ol>
+                <li>Descargar el JDK: Visita <a class="enlaces" href="https://www.oracle.com">oracle.com</a> y descarga el Java Development Kit
+                    (JDK).</li>
+                <li>Instalar el JDK: Sigue las instrucciones del instalador y configura la
+                    variable de entorno <code>JAVA_HOME</code> en tu sistema.</li>
+                <li>Instalar un IDE: Eclipse o IntelliJ IDEA son excelentes opciones para Java.</li>
+                <li>Prueba de Instalación: Abre una terminal, escribe <code>java -version</code> y asegúrate
+                    de que Java está correctamente instalado.</li>
+            </ol>
+            <h4>Instalación y Configuración para C#:</h4>
+            <ol>
+                <li>Descargar Visual Studio: Visita <a class="enlaces" href="https://visualstudio.microsoft.com/es/">visualstudio.microsoft.com</a> y descarga la
+                    versión Community.</li>
+                <li>Instalar Visual Studio: Sigue las instrucciones del instalador y selecciona
+                    el desarrollo de aplicaciones de escritorio con .NET.</li>
+                <li>Prueba de Instalación: Crea un nuevo proyecto de consola y asegúrate de que
+                    se compila y ejecuta correctamente.</li>
+            </ol>
+            <a href="#" id="showPart2Btn" class="next-btn">Siguiente Parte</a>
+
+        </section>
+
+        <section id="parte2" style="display: none;">
+            <h2>Parte 2: Algoritmos y Resolución de Problemas</h2>
+            <h3>1. Pensamiento Algorítmico</h3>
+            <p>
+                El pensamiento algorítmico es una forma estructurada de abordar problemas y
+                diseñar soluciones utilizando secuencias lógicas de pasos. Es esencial en la
+                programación, ya que un algoritmo es la base de cualquier programa.
+            </p>
+            <p>
+                El objetivo del pensamiento algorítmico es dividir un problema en partes más
+                pequeñas y manejables, y luego aplicar una serie de pasos lógicos que lleven a
+                una solución. Este enfoque se puede usar para resolver problemas matemáticos,
+                de lógica o de la vida real.
+            </p>
+            <p>
+                Ejemplo de pensamiento algorítmico: Imagina que necesitas hacer una receta
+                de cocina. El pensamiento algorítmico te ayuda a identificar cada paso necesario
+                (preparar ingredientes, seguir tiempos de cocción, etc.) y organizarlo de manera
+                secuencial para lograr el resultado final (una comida lista).
+            </p>
+            <h3>2. Resolución de Problemas Paso a Paso</h3>
+            <p>
+                La resolución de problemas paso a paso es un proceso metodológico que
+                ayuda a encontrar soluciones a problemas complejos. Aquí está un desglose de
+                los pasos típicos en este proceso:
+            </p>
+            <ol>
+                <li>
+                    <strong>Comprender el problema:</strong> Es esencial tener una comprensión clara del
+                    problema antes de intentar resolverlo. Esto implica definir qué se está
+                    tratando de resolver y qué condiciones se deben cumplir.
+                </li>
+                <li>
+                    <strong>Descomponer el problema:</strong> Dividir el problema en subproblemas más
+                    pequeños y manejables. Esto facilita la identificación de soluciones para
+                    cada parte del problema.
+                </li>
+                <li>
+                    <strong>Diseñar un plan o algoritmo:</strong> Crear un conjunto de pasos para resolver el
+                    problema. Estos pasos deben ser claros, precisos y seguir una secuencia
+                    lógica.
+                </li>
+                <li>
+                    <strong>Implementar la solución:</strong> Ejecutar el algoritmo para resolver el problema.
+                    En programación, esto se traduce en escribir el código basado en el
+                    algoritmo diseñado.
+                </li>
+                <li>
+                    <strong>Evaluar la solución:</strong> Comprobar si la solución realmente resuelve el
+                    problema y cumple con todas las condiciones establecidas. Si no es así,
+                    puede ser necesario volver a alguno de los pasos anteriores.
+                </li>
+            </ol>
+            <h4>Ejemplo de Resolución de Problemas:</h4>
+            <p>
+                • Problema: Encontrar la suma de todos los números pares de un rango dado.<br>
+                o Comprender el problema: Sumar números pares dentro de un rango
+                específico.<br>
+                o Descomponer el problema: Identificar los números pares y luego sumarlos.<br>
+                o Diseñar el plan: Iterar sobre los números en el rango y sumar aquellos que
+                son pares.<br>
+                o Implementar: Escribir el código para iterar, verificar si un número es par y
+                sumarlo.<br>
+                o Evaluar: Comprobar que el resultado sea correcto.
+            </p>
+            <h3>3. Diagramas de Flujo y Pseudocódigo</h3>
+            <p>
+                Los diagramas de flujo y el pseudocódigo son herramientas útiles para
+                representar visualmente un algoritmo y estructurar el proceso de resolución de
+                problemas antes de escribir el código real.
+            </p>
+            <h4>1. Diagramas de Flujo:</h4>
+            <p>
+                Un diagrama de flujo es una representación gráfica
+                de los pasos de un algoritmo. Utiliza diferentes formas geométricas (como
+                óvalos, rectángulos y diamantes) para representar procesos, decisiones y
+                entradas/salidas.
+            </p>
+            <ul>
+                <li><strong>Óvalo:</strong> Representa el inicio y el final del algoritmo.</li>
+                <li><strong>Rectángulo:</strong> Representa una operación o acción (como una instrucción o
+                    un cálculo).</li>
+                <li><strong>Diamante:</strong> Representa una decisión que lleva a dos caminos (ej. verdadero
+                    o falso).</li>
+                <li><strong>Flechas:</strong> Indican la dirección del flujo del proceso.</li>
+            </ul>
+            <p>
+                Ejemplo de diagrama de flujo (suma de dos números):
+            </p>
+            <p>
+                Inicio → Leer número 1 → Leer número 2 → Sumar números → Mostrar resultado → Fin
+            </p>
+            <h4>2. Pseudocódigo:</h4>
+            <p>
+                El pseudocódigo es una forma informal de describir un algoritmo, utilizando un
+                lenguaje similar al natural, pero con estructura lógica que se asemeja a la
+                programación. Permite a los programadores planificar la lógica de un programa
+                sin preocuparse por la sintaxis específica de un lenguaje de programación.
+            </p>
+            <p>
+                Ejemplo de pseudocódigo (suma de dos números):
+            </p>
+            <pre>
+                INICIO
+                    LEER número1
+                    LEER número2
+                    resultado ← número1 + número2
+                    MOSTRAR resultado
+                FIN
+            </pre>
+            <a href="../html/CursosFinal/cursofinal.html" id="finishBtn" class="next-btn">Finalizar Curso</a>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Curso de Programación. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

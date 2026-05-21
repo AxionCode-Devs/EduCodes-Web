@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Ciberseguridad - Parte 1</title>
+    <link rel="stylesheet" href="../css/curso1.css">
+    <script src="../javascript/curso2.js" defer></script>
+    <script src="../javascript/session.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>
+            </ul>
+            <div id="login-container"></div>
+        </nav>
+    </header>
+    <main>
+        <section id="modulo1" class="curso-seccion">
+            <h2>Módulo 1: Introducción a la Ciberseguridad</h2>
+            <p>
+                Este módulo introduce los conceptos fundamentales de ciberseguridad, las principales
+                amenazas cibernéticas y las normativas de seguridad aplicables. Su objetivo es que los
+                estudiantes comprendan los principios que rigen la protección de la información, los tipos
+                de ataques cibernéticos más comunes y cómo las normativas y estándares ayudan a mitigar
+                riesgos.
+            </p>
+            <h3>1.1. Fundamentos de la Ciberseguridad</h3>
+            <h4>1.1.1. Concepto de Ciberseguridad</h4>
+            <p>
+                La ciberseguridad es el conjunto de prácticas, tecnologías y procesos diseñados para
+                proteger redes, dispositivos, programas y datos de ataques, daños o acceso no autorizado. A
+                medida que la sociedad avanza hacia la digitalización, la protección de la información se ha
+                vuelto crucial para organizaciones de todos los tamaños.
+            </p>
+            <p>
+                La ciberseguridad abarca diversas áreas:
+            </p>
+            <ul>
+                <li>Seguridad de red: Protege la infraestructura de red de accesos no autorizados.</li>
+                <li>Seguridad de la información: Garantiza que los datos sean seguros tanto en reposo como
+                    en tránsito.</li>
+                <li>Seguridad de aplicaciones: Defiende las aplicaciones del código malicioso y otras
+                    amenazas durante su uso.</li>
+                <li>Seguridad operativa: Protege los procedimientos y procesos para manejar y proteger
+                    datos.</li>
+            </ul>
+            <h4>1.1.2. Principios Básicos: Confidencialidad, Integridad y Disponibilidad (CIA Triad)</h4>
+            <p>
+                El modelo CIA Triad es la base de la seguridad informática. Estos tres principios son
+                cruciales para cualquier política o estrategia de ciberseguridad:
+            </p>
+            <ul>
+                <li>Confidencialidad: Asegura que la información solo sea accesible por las personas
+                    autorizadas. Técnicas como el cifrado y la autenticación fuerte ayudan a mantener la
+                    confidencialidad.</li>
+                <li>Integridad: Garantiza que los datos no sean alterados o manipulados sin
+                    autorización. Para mantener la integridad de los datos, se utilizan mecanismos como
+                    el hashing y las firmas digitales.</li>
+                <li>Disponibilidad: Asegura que los sistemas y datos estén accesibles y operativos
+                    cuando sean necesarios. Las medidas de respaldo y recuperación ante desastres son
+                    esenciales para mantener la disponibilidad.</li>
+            </ul>
+            <h4>1.1.3. Diferencia entre Amenazas, Vulnerabilidades y Riesgos</h4>
+            <ul>
+                <li>Amenaza: Es cualquier evento o condición que podría causar daño a los sistemas o
+                    datos. Ejemplos incluyen malware, ataques de denegación de servicio y accesos no
+                    autorizados.</li>
+                <li>Vulnerabilidad: Es una debilidad en el sistema que puede ser explotada por una
+                    amenaza. Las vulnerabilidades pueden encontrarse en el software, el hardware o en
+                    las políticas de seguridad.</li>
+                <li>Riesgo: Es la probabilidad de que una amenaza explote una vulnerabilidad y el
+                    impacto que tendría en el sistema. La gestión de riesgos implica identificar y mitigar
+                    posibles daños.</li>
+            </ul>
+            <h4>1.1.4. Actividad Práctica</h4>
+            <p>Análisis de un Caso Real de Ciberataque:</p>
+            <ul>
+                <li>Elige un ciberataque reciente (por ejemplo, el ataque de ransomware WannaCry) y analiza:</li>
+                <ul>
+                    <li>¿Qué vulnerabilidades fueron explotadas?</li>
+                    <li>¿Cómo se violaron los principios de confidencialidad, integridad y disponibilidad?</li>
+                    <li>¿Cuáles fueron las consecuencias para las organizaciones afectadas?</li>
+                    <li>¿Qué medidas podrían haberse implementado para prevenir el ataque?</li>
+                </ul>
+            </ul>
+            <h3>1.2. Panorama de Amenazas Cibernéticas</h3>
+            <h4>1.2.1. Tipos de Amenazas</h4>
+            <p>
+                Existen múltiples amenazas cibernéticas, entre las que destacan:
+            </p>
+            <ul>
+                <li>Malware: Software malicioso diseñado para causar daño o acceder a información
+                    sin permiso. Ejemplos incluyen virus, gusanos, y spyware.</li>
+                <li>Phishing: Técnica de ingeniería social en la que los atacantes envían correos
+                    electrónicos fraudulentos con el objetivo de robar información sensible, como
+                    contraseñas o datos bancarios.</li>
+                <li>Ataques DDoS (Denegación de Servicio Distribuida): Los atacantes abruman los
+                    servidores de un objetivo con una cantidad masiva de solicitudes, lo que provoca la
+                    interrupción del servicio.</li>
+                <li>Ransomware: Software que cifra los archivos de una víctima y exige un rescate
+                    para restaurar el acceso.</li>
+                <li>Troyanos: Software que parece legítimo pero, en realidad, contiene código
+                    malicioso para tomar el control del sistema infectado.</li>
+            </ul>
+            <h4>1.2.2. Actores de las Amenazas</h4>
+            <p>
+                Los ataques cibernéticos pueden ser perpetrados por diferentes tipos de actores, cada uno
+                con distintos objetivos y motivaciones:
+            </p>
+            <ul>
+                <li>Hackers: Individuos que buscan comprometer sistemas para robar información o
+                    causar daño.</li>
+                <li>Hacktivistas: Hackers con motivaciones políticas o sociales que atacan para
+                    promover una causa.</li>
+                <li>Ciberdelincuentes: Organizaciones o individuos que cometen delitos en línea con
+                    fines financieros.</li>
+                <li>Insiders: Empleados o personas con acceso legítimo que pueden representar una
+                    amenaza interna, ya sea intencionada o accidental.</li>
+            </ul>
+            <h4>1.2.3. Actividad Práctica</h4>
+            <p>Investigación sobre Amenazas Cibernéticas Recientes:</p>
+            <ul>
+                <li>Realiza una investigación sobre las principales amenazas cibernéticas del último año.</li>
+                <li>Documenta al menos tres tipos de amenazas, su impacto y las técnicas utilizadas para
+                    llevar a cabo el ataque.</li>
+                <li>Presenta un informe sobre las mejores prácticas para prevenir estas amenazas.</li>
+            </ul>
+            <h3>1.3. Normativas y Estándares de Seguridad</h3>
+            <h4>1.3.1. Introducción a Normas de Seguridad</h4>
+            <p>
+                La ciberseguridad no solo depende de herramientas tecnológicas, sino también de
+                normativas y estándares que establecen directrices para proteger la información. Algunas
+                normativas clave incluyen:
+            </p>
+            <ul>
+                <li><strong>ISO 27001:</strong> Estándar internacional que describe cómo gestionar la seguridad de la
+                    información. Ayuda a las organizaciones a establecer, implementar, mantener y
+                    mejorar un sistema de gestión de seguridad de la información.</li>
+                <li><strong>NIST (National Institute of Standards and Technology):</strong> Proporciona
+                    directrices y estándares para la gestión de riesgos de ciberseguridad en
+                    organizaciones públicas y privadas.</li>
+                <li><strong>GDPR (Reglamento General de Protección de Datos):</strong> Norma europea que
+                    establece regulaciones estrictas sobre el manejo y protección de datos personales.
+                    Impone sanciones severas a las organizaciones que no cumplan con sus directrices.</li>
+            </ul>
+            <h4>1.3.2. Buenas Prácticas y Cumplimiento Normativo</h4>
+            <p>
+                Implementar buenas prácticas basadas en estos estándares ayuda a mitigar riesgos y
+                garantizar que la empresa cumpla con las regulaciones aplicables. Algunas prácticas clave
+                incluyen:
+            </p>
+            <ul>
+                <li>Realizar auditorías periódicas de seguridad.</li>
+                <li>Implementar políticas de gestión de contraseñas robustas.</li>
+                <li>Capacitar a los empleados sobre ciberseguridad.</li>
+                <li>Usar herramientas de cifrado para proteger la información sensible.</li>
+            </ul>
+            <h4>1.3.3. Actividad Práctica</h4>
+            <p>Identificación de Normativas Aplicables:</p>
+            <ul>
+                <li>Considera una empresa ficticia que maneja datos sensibles, como información médica o
+                    financiera.</li>
+                <li>Identifica las normativas locales (por ejemplo, la Ley de Protección de Datos en El
+                    Salvador) e internacionales que afecten a la empresa.</li>
+                <li>Elabora una lista de acciones que la empresa debe implementar para cumplir con dichas
+                    normativas y evitar sanciones.</li>
+            </ul>
+        </section>
+
+        <!-- Nuevo Módulo 2 -->
+        <section id="modulo2" class="curso-seccion" style="display: none;">
+            <h2>Módulo 2: Protección de Dispositivos y Redes</h2>
+            <p>
+                En este módulo, se explorarán las técnicas y herramientas fundamentales para proteger
+                dispositivos personales y redes informáticas. Los estudiantes aprenderán a implementar
+                medidas de seguridad esenciales, tanto en redes pequeñas como en redes más complejas.
+                Este módulo se centrará en la protección contra accesos no autorizados y en la prevención
+                de ataques comunes.
+            </p>
+            <h3>2.1. Protección de Dispositivos</h3>
+            <h4>2.1.1. Protección de Equipos y Software</h4>
+            <p>
+                Los dispositivos personales y empresariales son objetivos comunes de ataques. Para
+                protegerlos, es vital implementar varias medidas:
+            </p>
+            <ul>
+                <li><strong>Uso de Software Antivirus y Antimalware:</strong> Los antivirus y programas
+                    antimalware escanean los dispositivos en busca de amenazas y vulnerabilidades
+                    conocidas. Ejemplos incluyen Bitdefender, Kaspersky, Norton, y Windows Defender.</li>
+                <li><strong>Actualizaciones de Software y Parches de Seguridad:</strong> Mantener el
+                    software actualizado es fundamental para cerrar vulnerabilidades que los atacantes
+                    podrían explotar. Muchos ataques cibernéticos aprovechan fallas en software
+                    desactualizado.</li>
+                <li><strong>Contraseñas Seguras y Autenticación Multifactor (MFA):</strong> Usar
+                    contraseñas fuertes, únicas para cada cuenta, y complementar con autenticación
+                    multifactor (MFA), añade una capa adicional de seguridad. MFA requiere que el
+                    usuario verifique su identidad mediante un segundo método, como un código enviado
+                    por SMS o una aplicación de autenticación.</li>
+                <li><strong>Cifrado de Datos:</strong> El cifrado protege los datos en reposo y en
+                    tránsito. Al cifrar el disco duro de un dispositivo (mediante BitLocker o FileVault,
+                    por ejemplo), se asegura que los datos no sean accesibles si el dispositivo se pierde
+                    o es robado.</li>
+            </ul>
+            <h4>2.1.2. Configuración de Políticas de Seguridad en Dispositivos Móviles</h4>
+            <p>
+                Los dispositivos móviles, como smartphones y tabletas, también son blancos de ataques.
+                Las siguientes medidas son esenciales:
+            </p>
+            <ul>
+                <li><strong>Política de Bloqueo de Pantalla:</strong> Asegurarse de que los dispositivos
+                    se bloqueen automáticamente tras un período de inactividad, usando contraseñas,
+                    patrones o datos biométricos.</li>
+                <li><strong>Administración de Dispositivos Móviles (MDM):</strong> Las soluciones de
+                    MDM permiten a las empresas gestionar y proteger los dispositivos móviles de sus
+                    empleados. MDM puede forzar políticas de seguridad, bloquear dispositivos
+                    comprometidos o borrar datos de forma remota si un dispositivo es robado.</li>
+                <li><strong>Evitar Redes Wi-Fi Públicas no Seguras:</strong> Las redes públicas son
+                    riesgosas, ya que los atacantes pueden interceptar el tráfico. Es recomendable usar
+                    una VPN (Red Privada Virtual) cuando se navega en redes no confiables para cifrar
+                    el tráfico.</li>
+            </ul>
+            <h4>2.1.3. Actividad Práctica</h4>
+            <p>Configuración de Medidas de Seguridad en Dispositivos:</p>
+            <ul>
+                <li>Los estudiantes realizarán una auditoría de seguridad en sus propios dispositivos
+                    (computadoras, smartphones) y verificarán:</li>
+                <ul>
+                    <li>Uso de contraseñas seguras.</li>
+                    <li>Si tienen antivirus y software antimalware actualizados.</li>
+                    <li>Si las actualizaciones automáticas están habilitadas.</li>
+                    <li>Configuración de cifrado de disco.</li>
+                    <li>Configuración de MFA en aplicaciones clave.</li>
+                </ul>
+            </ul>
+            <h3>2.2. Seguridad de Redes</h3>
+            <h4>2.2.1. Fundamentos de Seguridad de Redes</h4>
+            <p>
+                La seguridad de redes implica proteger la infraestructura de red y los datos que viajan
+                a través de ella. Los elementos clave de seguridad de redes incluyen:
+            </p>
+            <ul>
+                <li><strong>Firewalls:</strong> Actúan como barreras entre redes internas seguras y redes
+                    externas no confiables, como Internet. Un firewall filtra el tráfico entrante y
+                    saliente basado en reglas predefinidas, bloqueando accesos no autorizados.</li>
+                <li><strong>Sistemas de Detección y Prevención de Intrusiones (IDS/IPS):</strong> Un
+                    IDS monitorea el tráfico de red en busca de patrones sospechosos, alertando a los
+                    administradores cuando detecta posibles amenazas. Un IPS, además de detectar, puede
+                    bloquear automáticamente el tráfico malicioso.</li>
+                <li><strong>Segmentación de Redes:</strong> Dividir la red en diferentes segmentos ayuda a
+                    contener posibles ataques. Cada segmento puede tener políticas de seguridad más
+                    estrictas, limitando el acceso entre las diferentes partes de la red.</li>
+            </ul>
+        </section>
+
+        <button id="siguiente-parte" onclick="irASiguienteParte()">Siguiente Parte</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 EduCodes R.L. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

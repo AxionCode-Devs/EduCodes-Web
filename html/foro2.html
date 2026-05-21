@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Foros/foro2.css">
+    <title>EduCodes - Foro: Mejores Prácticas en Seguridad Web</title>
+    <script src="../javascript/session.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+        </div>
+    </header>
+
+    <div class="foro">
+        <h1>Mejores Prácticas en Seguridad Web</h1>
+        <p>Aprende cómo proteger tus sitios web contra vulnerabilidades comunes y ataques cibernéticos.</p>
+
+        <h2>Introducción a la Seguridad Web</h2>
+        <p>La seguridad web es un aspecto crítico que todos los desarrolladores deben tener en cuenta. En un mundo digital donde los ataques son cada vez más sofisticados, es vital que tomemos medidas proactivas para proteger nuestras aplicaciones y usuarios.</p>
+        <img src="../imagenes/seguridadweb.png" alt="Introducción a la Seguridad Web" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>1. Validación de Entradas</h2>
+        <p>Siempre valida la entrada del usuario en tus formularios para prevenir inyecciones de SQL y otros ataques. Utiliza listas blancas siempre que sea posible.</p>
+        <p>Ejemplo de validación de entradas:</p>
+        <pre><code>
+function validarEntrada(input) {
+    const regex = /^[a-zA-Z0-9]*$/; // Solo permite letras y números
+    return regex.test(input);
+}
+        </code></pre>
+        <img src="../imagenes/Foros Imagenes/foro2_entradas.jpeg" alt="Validación de Entradas" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>2. Autenticación Segura</h2>
+        <p>Implementa un sistema de autenticación robusto. Usa HTTPS y almacena contraseñas de manera segura utilizando hash y sal.</p>
+        <p>Usa bibliotecas de confianza para manejar la autenticación, como <code>bcrypt</code> para Node.js.</p>
+        <img src="../imagenes/Foros Imagenes/foro2_autentication.jpeg" alt="Autenticación Segura" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>3. Control de Acceso</h2>
+        <p>Implementa controles de acceso para asegurar que los usuarios solo puedan acceder a las áreas de la aplicación que les corresponden. Revisa regularmente las políticas de acceso y ajusta según sea necesario.</p>
+        <img src="../imagenes/Foros Imagenes/foro2_acceso.png" alt="Control de Acceso" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>4. Uso de HTTPS</h2>
+        <p>HTTPS es fundamental para proteger la información en tránsito. Asegúrate de que todas las páginas de tu sitio estén disponibles a través de HTTPS.</p>
+        <img src="../imagenes/Foros Imagenes/foro2_https.jpeg" alt="Uso de HTTPS" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>5. Actualizaciones y Mantenimiento</h2>
+        <p>Realiza actualizaciones regulares en tu software y dependencias. Mantenerse al día con las últimas versiones puede ayudarte a evitar vulnerabilidades conocidas.</p>
+
+        <h2>6. Seguridad en las Sesiones</h2>
+        <p>Asegúrate de implementar medidas de seguridad para las sesiones de usuario. Utiliza tokens de sesión y asegúrate de que se eliminen al cerrar sesión. Además, establece una duración razonable para las sesiones.</p>
+
+        <h2>7. Protección contra CSRF</h2>
+        <p>Implementa tokens CSRF en formularios para prevenir ataques de falsificación de solicitudes entre sitios. Asegúrate de que cada formulario incluya un token único.</p>
+        <p>Ejemplo de implementación de un token CSRF:</p>
+        <pre><code>
+function generarTokenCSRF() {
+    return btoa(Math.random().toString()).substr(0, 16);
+}
+        </code></pre>
+
+        <h2>8. Protección contra XSS</h2>
+        <p>Utiliza medidas para protegerte contra ataques de cross-site scripting (XSS). Escapa correctamente los datos del usuario y utiliza bibliotecas que gestionen la salida segura.</p>
+
+        <h2>9. Copias de Seguridad</h2>
+        <p>Realiza copias de seguridad regulares de tus datos. Asegúrate de que las copias de seguridad estén cifradas y almacenadas de forma segura.</p>
+
+        <h2>10. Educación y Conciencia</h2>
+        <p>Capacita a tu equipo sobre las mejores prácticas de seguridad. La concienciación sobre seguridad es clave para evitar errores humanos que pueden comprometer la seguridad de tu aplicación.</p>
+
+        <h2>Conclusión</h2>
+        <p>La seguridad web es un proceso continuo. Es importante mantenerse actualizado sobre las últimas tendencias y vulnerabilidades. Comparte tus experiencias y recomendaciones en este foro.</p>
+
+        <h2>Comentarios</h2>
+        <div class="comentarios">
+            <div class="comentario">
+                <span class="nombre">SeguridadGuru:</span>
+                <p>Implementar HTTPS es fundamental para proteger la comunicación de tus usuarios.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">DevSec:</span>
+                <p>No olvides utilizar herramientas de escaneo de vulnerabilidades regularmente.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">WebProtect:</span>
+                <p>La educación de los usuarios sobre seguridad también es crucial.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">CiberSegura:</span>
+                <p>Las copias de seguridad son esenciales para la recuperación ante desastres. Asegúrate de tener un plan sólido.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">TechNerd:</span>
+                <p>Las configuraciones del servidor también son un aspecto importante de la seguridad. No las subestimes.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">DevOps:</span>
+                <p>El uso de contenedores puede mejorar la seguridad de tus aplicaciones. Considera su implementación.</p>
+            </div>
+        </div>
+
+        <form class="form-comentario" onsubmit="handleCommentSubmission(event)">
+            <h3>Deja tu comentario:</h3>
+            <textarea class="input-comentario" placeholder="Escribe tu comentario aquí..." required></textarea>
+            <button type="submit" class="boton-comentario">Enviar</button>
+        </form>
+        <div id="overlay" class="overlay" style="display:none;"></div>
+        <div id="popup" class="popup" style="display:none;">
+            <h2>Acceso Denegado</h2>
+            <p>Debes iniciar sesión para dejar un comentario.</p>
+            <div class="popup-buttons">
+            <button id="loginButton" class="popup-button">Iniciar Sesión</button>
+            <button id="backButton" class="popup-button">Regresar</button>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

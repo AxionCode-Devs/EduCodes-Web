@@ -1,0 +1,82 @@
+/* Estilos generales del body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a094a;
+    color: white;
+}
+.logo-img {
+    width: 103px; /* Ajusta el tamaño como desees */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Estilos del header */
+header {
+    background-color: #1a094a;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos del navbar dentro del header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 85px;
+    height: 85px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #e6e6e6;
+}
+
+/* Sección "Nosotros" */
+.about {
+    padding: 60px 20px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #1a094a;
+    padding: 20px;
+    text-align: center;
+    color: #c2c2f0;
+    font-size: 14px;
+}

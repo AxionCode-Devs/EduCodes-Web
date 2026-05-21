@@ -1,0 +1,331 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a094a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Estilos del header */
+header {
+    background-color: #1a094a;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+    background-color: #3b237e;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos del navbar dentro del header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: inherit; /* Hereda el color del header */
+    padding: 0; /* Ajusta el padding si es necesario */
+}
+
+/* Estilos para el logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 20px; /* Cambia el tamaño aquí */
+    color: white; /* Puedes ajustar el color si lo deseas */
+    margin: 0; /* Elimina el margen si es necesario */
+}
+
+.logo img {
+    width: 85px; 
+    height: 85px; 
+    margin-right: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.15);
+    filter: brightness(1.3);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Estilos de los enlaces del navbar */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e6e6e6;
+    transform: scale(1.05);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.login-btn {
+    background-color: #ffffff;
+    color: #1a094a;
+    border: none;
+    padding: 8px 20px; /* Ajustar tamaño del botón */
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-4px); /* Efecto hover */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn .arrow {
+    margin-left: 5px;
+}
+
+/* Estilo del perfil del usuario */
+.user-profile {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+}
+
+.user-profile .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.user-profile .username {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user-profile:hover .dropdown-menu {
+    display: block; /* Mostrar el menú desplegable cuando se pasa por encima */
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 200px;
+    padding: 10px;
+}
+
+.dropdown-menu p {
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    border-top: 1px solid #eaeaea;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Imagen de perfil dentro del menú desplegable */
+.dropdown-menu .dropdown-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Estilos de la sección de previa del curso */
+.course-preview {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #3b237e;
+    border-radius: 30px;
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.6);
+    align-items: center;
+}
+
+.course-content {
+    width: 50%;
+}
+
+.course-content h1 {
+    font-size: 36px;
+}
+
+.course-content h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.course-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.course-image {
+    width: 50%;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center;
+    min-height: 300px;
+}
+
+.course-image img {
+    max-width: 100%; /* Asegura que la imagen no sobrepase el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 25px;
+}
+
+/* Estilos del botón de inscripción */
+.btn-inscripcion {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #1a094a;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-inscripcion:hover {
+    background-color: #e6e6e6;
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #1a094a;
+    padding: 20px;
+    text-align: center;
+    color: #c2c2f0;
+    font-size: 14px;
+}
+
+/* Estilos del mensaje de acceso denegado */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con más opacidad */
+    display: none; /* Oculto por defecto */
+    z-index: 900; /* Asegurar que esté por encima de otros elementos */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque para el fondo */
+}
+
+.access-denied-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2c1a4a; /* Fondo más oscuro para contraste */
+    border-radius: 15px; /* Esquinas más redondeadas */
+    padding: 30px; /* Espaciado interno mayor */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada */
+    color: #ffffff; /* Color del texto */
+    display: none; /* Oculto por defecto */
+    z-index: 1000; /* Asegurar que esté por encima del overlay */
+    text-align: center; /* Centrar texto */
+    animation: fadeIn 0.3s ease; /* Animación de entrada */
+}
+
+.access-denied-message p {
+    margin: 0 0 15px; /* Margen para el texto */
+    font-size: 18px; /* Tamaño de fuente más grande */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Estilos de los botones en el mensaje de acceso denegado */
+#backButton, #loginButton {
+    background-color: #5ce1e6; /* Color de fondo */
+    color: #1a094a; /* Color del texto */
+    border: none;
+    padding: 12px 20px; /* Mayor espaciado para botones */
+    border-radius: 10px; /* Esquinas más redondeadas */
+    cursor: pointer;
+    margin: 5px; /* Margen alrededor de los botones */
+    font-size: 16px; /* Tamaño de fuente para los botones */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+#backButton:hover, #loginButton:hover {
+    background-color: #4bc4d2; /* Color de fondo en hover */
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+/* Clase para mostrar el mensaje y el overlay */
+.show {
+    display: block; /* Mostrar el elemento */
+}

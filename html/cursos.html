@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCodes - Cursos</title>
+    <link rel="stylesheet" href="../css/cursos.css">
+    <script src="../javascript/session.js"></script>
+    <script src="../javascript/chatbot.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+
+        </nav>
+    </header>
+
+    <section class="cursos-section">
+        <h2>Cursos disponibles:</h2>
+        <div class="cursos-container">
+            <div class="curso-card gratuito">
+                <h3> FUNDAMENTOS DE PROGRAMACION</h3>
+                <p class="nivel">Nivel: Principiante</p>
+                <div class="rating">
+                    <span class="star">&#9733;</span>
+                </div>
+                <p class="descripcion">Aprende las bases de la programación desde cero. Ideal para principiantes que buscan adentrarse en el mundo de la tecnología.</p>
+                <div class="sticker">¡GRATIS!</div>
+                <a href="../html/previa-curso1.html" class="curso-btn">Ir al Curso</a>
+
+            </div>
+            <div class="curso-card pago">
+                <h3>Redes y Comunicación de Datos 🌐</h3>
+                <p class="nivel">Nivel: Intermedio</p>
+                <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <p class="descripcion">Explora el funcionamiento de las redes de computadoras y la comunicación de datos. Perfecto para adquirir una base sólida en redes.</p>
+                <div class="sticker">DE PAGO</div>
+                <a href="../html/previa-curso2.html" class="curso-btn">Ir al Curso</a>
+            </div>
+            <div class="curso-card bloqueado">
+                <h3>Desarrollo Web Full Stack 💻</h3>
+                <p class="nivel">Nivel: Experto</p>
+                <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <p class="descripcion">Conviértete en un desarrollador web completo. Cubre el desarrollo de aplicaciones web dinámicas.</p>
+                <div class="lock-icon">
+                    <img src="../imagenes/bloquear.png" alt="Curso bloqueado">
+                </div>
+                <button class="curso-btn" disabled>Ir al Curso</button> <!-- Botón agregado y deshabilitado -->
+            </div>
+            <div class="curso-card gratuito">
+                <h3> Introducción a Python 🐍</h3>
+                <p class="nivel">Nivel: Principiante</p>
+                <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <p class="descripcion">Descubre el lenguaje de programación Python. Aprende sintaxis básica, estructuras de datos y programación orientada a objetos.</p>
+                <div class="sticker">¡GRATIS!</div>
+                <button class="curso-btn">Ir al Curso</button> <!-- Botón agregado -->
+            </div>
+            <div class="curso-card pago">
+                <h3>Machine Learning Avanzado 🤖</h3>
+                <p class="nivel">Nivel: Avanzado</p>
+                <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <p class="descripcion">Profundiza en algoritmos de aprendizaje automático y redes neuronales. Ideal para científicos de datos y programadores avanzados.</p>
+                <div class="sticker">DE PAGO</div>
+                <button class="curso-btn">Ir al Curso</button> <!-- Botón agregado -->
+            </div>
+            <div class="curso-card gratuito">
+                <h3> Ciberseguridad Básica 🔒</h3>
+                <p class="nivel">Nivel: Intermedio</p>
+                <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <p class="descripcion">Aprende los fundamentos de la seguridad informática. Conoce las amenazas comunes y cómo protegerte en línea.</p>
+                <div class="sticker">¡GRATIS!</div>
+                <button class="curso-btn">Ir al Curso</button> <!-- Botón agregado -->
+            </div>
+        </div>
+    </section>
+
+    <div id="chatbot">
+        <!-- Ícono flotante -->
+        <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+        
+        <!-- Ventana del chatbot (inicialmente oculta) -->
+        <div id="chatbot-window" class="hidden">
+            <div id="chatbot-header">
+                <h3>Chatbot EduCodes</h3>
+                <button onclick="toggleChatbot()">✖</button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="message bot-message">Hola, ¿cómo puedo ayudarte hoy?</div>
+            </div>
+            <div id="chatbot-input">
+                <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

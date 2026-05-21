@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Foros/foro2.css">
+    <title>EduCodes - Foro: Automatización con Python</title>
+    <script src="../javascript/session.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo EduCodes">
+                <h1>EduCodes R.L.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/cursos.html">Cursos</a></li>
+                <li><a href="../html/simuladores.html">Simuladores</a></li>
+                <li><a href="../html/planes.html">Planes</a></li>
+                <li><a href="../html/foros.html">Foros</a></li>
+                <li><a href="../html/consultas.html">Consultas</a></li>                
+            </ul>
+            <div id="login-container"></div>
+        </div>
+    </header>
+
+    <div class="foro">
+        <h1>Automatización con Python: Guía Completa</h1>
+        <p>Explora cómo automatizar tareas repetitivas usando scripts en Python de manera eficiente.</p>
+
+        <h2>Introducción a la Automatización con Python</h2>
+        <p>La automatización con Python permite a los desarrolladores y usuarios realizar tareas repetitivas de manera eficiente, ahorrando tiempo y esfuerzo. Con la simplicidad de Python, puedes crear scripts que interactúan con el sistema operativo, procesan datos y mucho más.</p>
+        <img src="../imagenes/autopython.jpg" alt="Introducción a la Automatización con Python" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>1. Instalación de Python</h2>
+        <p>Para comenzar a automatizar tareas, primero necesitas tener Python instalado. Puedes descargarlo desde <a href="https://www.python.org/downloads/" target="_blank">python.org</a>. Asegúrate de marcar la opción "Add Python to PATH" durante la instalación.</p>
+        
+        <h2>2. Librerías Útiles para Automatización</h2>
+        <p>Existen varias librerías en Python que facilitan la automatización:</p>
+        <ul>
+            <li><strong>os:</strong> Interactúa con el sistema operativo.</li>
+            <li><strong>shutil:</strong> Manejo de archivos y directorios.</li>
+            <li><strong>requests:</strong> Realiza solicitudes HTTP.</li>
+            <li><strong>selenium:</strong> Automatiza navegadores web.</li>
+            <li><strong>pandas:</strong> Manipula y analiza datos.</li>
+        </ul>
+        <img src="../imagenes/Foros Imagenes/foro3_libreriaspython.jpg" alt="Librerías de Python" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>3. Ejemplo de Automatización de Tareas con Python</h2>
+        <p>A continuación, se presenta un ejemplo de un script que renombra archivos en un directorio:</p>
+        <pre><code>
+import os
+
+directorio = 'ruta/a/tu/directorio'
+for contador, nombre_archivo in enumerate(os.listdir(directorio)):
+    nuevo_nombre = f'archivo_{contador}.txt'
+    os.rename(os.path.join(directorio, nombre_archivo), os.path.join(directorio, nuevo_nombre))
+print("Archivos renombrados con éxito.")
+        </code></pre>
+        <img src="../imagenes/Foros Imagenes/foro3_autopython.jpg" alt="Script de Automatización" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 10px;">
+
+        <h2>4. Automatización de Correos Electrónicos</h2>
+        <p>Puedes automatizar el envío de correos electrónicos utilizando la librería <code>smtplib</code>. Aquí hay un ejemplo:</p>
+        <pre><code>
+import smtplib
+from email.mime.text import MIMEText
+
+def enviar_correo(destinatario, asunto, mensaje):
+    smtp_server = 'smtp.gmail.com'
+    smtp_port = 587
+    usuario = 'tu_email@gmail.com'
+    contrasena = 'tu_contrasena'
+    
+    msg = MIMEText(mensaje)
+    msg['Subject'] = asunto
+    msg['From'] = usuario
+    msg['To'] = destinatario
+
+    with smtplib.SMTP(smtp_server, smtp_port) as server:
+        server.starttls()
+        server.login(usuario, contrasena)
+        server.send_message(msg)
+    print("Correo enviado con éxito.")
+
+enviar_correo('destinatario@example.com', 'Asunto', 'Este es un mensaje automatizado.')
+        </code></pre>
+
+        <h2>5. Web Scraping con Selenium</h2>
+        <p>Para automatizar la interacción con navegadores, puedes usar Selenium. Aquí hay un ejemplo que abre una página web y toma una captura de pantalla:</p>
+        <pre><code>
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.get('https://www.ejemplo.com')
+driver.save_screenshot('captura.png')
+driver.quit()
+        </code></pre>
+
+        <h2>6. Consideraciones de Seguridad</h2>
+        <p>Al automatizar tareas, especialmente aquellas que involucran el manejo de credenciales o datos sensibles, es importante tener en cuenta las prácticas de seguridad:</p>
+        <ul>
+            <li>Utiliza variables de entorno para almacenar credenciales.</li>
+            <li>Evita codificar información sensible directamente en tus scripts.</li>
+            <li>Revisa y valida las entradas de usuario cuando sea necesario.</li>
+        </ul>
+
+        <h2>Conclusión</h2>
+        <p>La automatización con Python ofrece muchas posibilidades para simplificar tareas repetitivas. Con las herramientas y técnicas adecuadas, puedes aumentar tu productividad y eficiencia. Comparte tus proyectos y experiencias en este foro.</p>
+
+        <h2>Comentarios</h2>
+        <div class="comentarios">
+            <div class="comentario">
+                <span class="nombre">AutomatizaTodo:</span>
+                <p>Usar Selenium para pruebas automatizadas ha cambiado la forma en que trabajo.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">PythonLover:</span>
+                <p>La biblioteca <code>requests</code> es esencial para mí. ¡Es tan fácil de usar!</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">DataAnalyzer:</span>
+                <p>Automatizar la limpieza de datos con pandas me ha ahorrado horas de trabajo.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">WebScraper:</span>
+                <p>El web scraping tiene muchas aplicaciones, pero también debemos tener cuidado con los términos de servicio de los sitios web.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">SeguridadDev:</span>
+                <p>Recuerda usar siempre conexiones seguras cuando envíes correos electrónicos.</p>
+            </div>
+            <div class="comentario">
+                <span class="nombre">TechEnthusiast:</span>
+                <p>Me encantaría ver más ejemplos sobre automatización de tareas en sistemas operativos.</p>
+            </div>
+        </div>
+
+        <form class="form-comentario" onsubmit="handleCommentSubmission(event)">
+            <h3>Deja tu comentario:</h3>
+            <textarea class="input-comentario" placeholder="Escribe tu comentario aquí..." required></textarea>
+            <button type="submit" class="boton-comentario">Enviar</button>
+        </form>
+        <div id="overlay" class="overlay" style="display:none;"></div>
+        <div id="popup" class="popup" style="display:none;">
+            <h2>Acceso Denegado</h2>
+            <p>Debes iniciar sesión para dejar un comentario.</p>
+            <div class="popup-buttons">
+            <button id="loginButton" class="popup-button">Iniciar Sesión</button>
+            <button id="backButton" class="popup-button">Regresar</button>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2024 EduCodes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

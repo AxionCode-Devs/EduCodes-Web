@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de la Plataforma</title>
+    <link rel="stylesheet" href="../css/configuracion.css">
+    <script src="../js/auth.js" defer></script> 
+    <script>
+        window.onload = function() {
+            const role = localStorage.getItem('role'); // Verifica el rol del usuario
+            if (role !== 'admin') {
+                alert('Acceso denegado.'); // Si no es admin, muestra alerta
+                window.location.href = '../html/login.html'; // Redirige a la página de login
+            }
+        };
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.removeItem('username'); // Elimina el nombre de usuario
+            localStorage.removeItem('role'); // Elimina el rol
+            window.location.href = '../html/login.html'; // Redirigir a la página de login
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../imagenes/educode_logo.png" alt="Logo Plataforma">
+                <h1>Admin Plataforma</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="gestcursos.html">Cursos</a></li>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+            </ul>
+            <a href="#" class="login-btn" onclick="logout()">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <section class="admin-content">
+        <div class="admin-box">
+            <h2>Configuración</h2>
+            <div class="admin-grid">
+                <div class="admin-item">
+                    <h3>Actualizar Información de la Plataforma</h3>
+                    <form action="actualizar_plataforma.html" method="post">
+                        <label for="nombre-plataforma">Nombre de la Plataforma:</label>
+                        <input type="text" id="nombre-plataforma" name="nombre-plataforma" required>
+                        <label for="email-admin">Email del Administrador:</label>
+                        <input type="email" id="email-admin" name="email-admin" required>
+                        <button type="submit" class="cta-btn">Actualizar Información</button>
+                    </form>
+                </div>
+                <div class="admin-item">
+                    <h3>Cambiar Contraseña</h3>
+                    <form action="cambiar_contraseña.html" method="post">
+                        <label for="old-password">Contraseña Antigua:</label>
+                        <input type="password" id="old-password" name="old-password" required>
+                        <label for="new-password">Nueva Contraseña:</label>
+                        <input type="password" id="new-password" name="new-password" required>
+                        <button type="submit" class="cta-btn">Cambiar Contraseña</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Aprendizaje. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
