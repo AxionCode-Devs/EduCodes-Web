@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/global.css?v=1.2">
-<link rel="stylesheet" href="/css/inicio.css"> 
+    <link rel="stylesheet" href="../css/inicio.css"> 
     <script>
         window.onload = function() {
             const role = localStorage.getItem('role'); // Verifica el rol del usuario
@@ -39,7 +39,7 @@
                 <li><a href="reportes.html">Reportes</a></li>
                 <li><a href="configuracion.html">Configuración</a></li>
             </ul>
-            <a href="#" class="login-btn">Cerrar Sesión</a>
+            <a href="#" class="login-btn" onclick="logout()">Cerrar Sesión</a>
         </div>
     </header>
 

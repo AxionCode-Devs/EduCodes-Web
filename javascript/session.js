@@ -146,7 +146,7 @@ function restrictCourseAccess(event) {
 }
 
 // Comprobar el estado de la sesión al cargar la página
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
     checkUserSession();
 
     // Añadir verificación de acceso al botón "Empezar Curso"
