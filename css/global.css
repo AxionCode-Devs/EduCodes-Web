@@ -667,7 +667,10 @@ select.form-input {
 
 .access-denied-message.show,
 .popup.show {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .access-denied-message h2,

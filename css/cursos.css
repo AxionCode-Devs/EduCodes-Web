@@ -156,6 +156,28 @@
     cursor: not-allowed;
 }
 
+.lock-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.lock-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .cursos-section h2 {
