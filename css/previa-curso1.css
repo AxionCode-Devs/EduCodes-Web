@@ -1,120 +1,142 @@
+/* =========================================================================
+   Course Preview Page — EduCodes Premium
+   ========================================================================= */
 
+.course-preview-section {
+    padding: var(--space-xl) var(--space-sm);
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-
-/* Estilos de la sección de previa del curso */
 .course-preview {
     display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    background-color: #3b237e;
-    border-radius: 30px;
-    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.6);
-    align-items: center;
+    gap: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    align-items: flex-start;
 }
 
 .course-content {
-    width: 50%;
+    flex: 1;
 }
 
 .course-content h1 {
-    font-size: 36px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    background: linear-gradient(135deg, #ffffff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .course-content h2 {
-    font-size: 24px;
-    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
 }
 
-.course-content ul {
-    list-style-type: disc;
-    margin-left: 20px;
+.course-content p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: var(--space-sm);
+}
+
+.course-content ul,
+.course-content ol {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--space-md);
+}
+
+.course-content li {
+    padding: 8px 0;
+    padding-left: 24px;
+    color: var(--text-muted);
+    font-size: 14px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.course-content li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-weight: 700;
+}
+
+.course-content li:last-child {
+    border-bottom: none;
 }
 
 .course-image {
-    width: 50%;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center;
-    min-height: 300px;
+    flex: 0 0 40%;
+    max-width: 400px;
 }
 
 .course-image img {
-    max-width: 100%; /* Asegura que la imagen no sobrepase el contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 25px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
 }
 
-/* Estilos del botón de inscripción */
+/* CTA Button */
 .btn-inscripcion {
-    display: inline-block;
-    background-color: #f0f0f0;
-    color: #1a094a;
-    padding: 12px 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
     border-radius: 30px;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 16px;
     text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    margin-top: var(--space-md);
 }
 
 .btn-inscripcion:hover {
-    background-color: #e6e6e6;
-    transform: translateY(-5px);
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .course-preview {
+        flex-direction: column;
+        padding: var(--space-md);
+    }
 
-/* Estilos del mensaje de acceso denegado */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con más opacidad */
-    display: none; /* Oculto por defecto */
-    z-index: 900; /* Asegurar que esté por encima de otros elementos */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque para el fondo */
-}
+    .course-content {
+        width: 100%;
+    }
 
-.access-denied-message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #2c1a4a; /* Fondo más oscuro para contraste */
-    border-radius: 15px; /* Esquinas más redondeadas */
-    padding: 30px; /* Espaciado interno mayor */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada */
-    color: #ffffff; /* Color del texto */
-    display: none; /* Oculto por defecto */
-    z-index: 1000; /* Asegurar que esté por encima del overlay */
-    text-align: center; /* Centrar texto */
-    animation: fadeIn 0.3s ease; /* Animación de entrada */
-}
+    .course-content h1 {
+        font-size: 1.5rem;
+    }
 
-.access-denied-message p {
-    margin: 0 0 15px; /* Margen para el texto */
-    font-size: 18px; /* Tamaño de fuente más grande */
-}
+    .course-image {
+        max-width: 100%;
+        flex: none;
+        width: 100%;
+    }
 
-/* Estilos de los botones en el mensaje de acceso denegado */
-#backButton, #loginButton {
-    background-color: #5ce1e6; /* Color de fondo */
-    color: #1a094a; /* Color del texto */
-    border: none;
-    padding: 12px 20px; /* Mayor espaciado para botones */
-    border-radius: 10px; /* Esquinas más redondeadas */
-    cursor: pointer;
-    margin: 5px; /* Margen alrededor de los botones */
-    font-size: 16px; /* Tamaño de fuente para los botones */
-    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
-}
-
-#backButton:hover, #loginButton:hover {
-    background-color: #4bc4d2; /* Color de fondo en hover */
-    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
-}
-
-/* Clase para mostrar el mensaje y el overlay */
-.show {
-    display: block; /* Mostrar el elemento */
+    .btn-inscripcion {
+        width: 100%;
+        justify-content: center;
+    }
 }

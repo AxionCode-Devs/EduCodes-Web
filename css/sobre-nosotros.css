@@ -1,131 +1,207 @@
+/* =========================================================================
+   Sobre Nosotros Page — EduCodes Premium
+   ========================================================================= */
 
-
-
-/* Estilos del main */
-main {
-    padding: 40px 20px;
-}
-
-.about {
-    margin-bottom: 40px;
-}
-
-.about h2 {
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-.about p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    text-align: justify;
+.about-section {
+    padding: var(--space-xl) var(--space-sm);
+    max-width: 1100px;
     margin: 0 auto;
-    max-width: 800px;
 }
 
-/* Estilos para misión y visión */
-.mission-vision {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.mission, .vision {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    width: 45%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.mission h3, .vision h3 {
-    color: #ffffff;
-}
-
-.mission p, .vision p {
-    font-size: 1.1em;
-    line-height: 1.5;
-}
-
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
-
-.header {
+.about-section .section-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: var(--space-xl);
 }
 
-.logoPag {
-    width: 300px; /* Ajusta el tamaño del logo según necesites */
-    margin-bottom: 10px;
+.about-section .section-header h1,
+.about-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    background: linear-gradient(135deg, #ffffff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin: 10px 0;
-}
-
-.slogan {
-    font-size: 1.2em;
+.about-section .slogan,
+.about-section .section-header p {
+    color: var(--accent-primary);
+    font-size: 1.1rem;
+    font-weight: 500;
     font-style: italic;
-    color: #5ce1e6;
-}
-
-h2 {
-    color: #5ce1e6;
-    border-bottom: 2px solid #5ce1e6;
-    padding-bottom: 5px;
-    margin-top: 20px;
-}
-
-.about, .business-description, .features, .competitive-advantages, .vision-mission, .justification {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: rgba(92, 225, 230, 0.1); /* Fondo ligero para las secciones */
-}
-
-ul {
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-li {
-    margin: 5px 0;
-}
-
-.explore {
+    margin-bottom: var(--space-lg);
     text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    background-color: rgba(92, 225, 230, 0.2); /* Fondo ligero para la sección de explorar */
-    border-radius: 8px;
 }
 
-.explore-button {
+.about-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: var(--space-sm);
+    position: relative;
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #5ce1e6;
-    color: #1a094a;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+}
+
+.about-section p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* Logo */
+.logoPag,
+.about-section .logo-img {
+    display: block;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto var(--space-lg);
+    border-radius: var(--radius-md);
+}
+
+/* Content sections */
+.about-content,
+.container > section,
+.quienes-somos,
+.historia {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* Mission & Vision cards side by side */
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.mission,
+.vision {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    width: 100%;
+}
+
+.mission:hover,
+.vision:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Values section */
+.valores ul,
+.about-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.valores li,
+.about-section ul li {
+    padding: 10px 0;
+    padding-left: 28px;
+    color: var(--text-muted);
+    font-size: 15px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.valores li::before,
+.about-section ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 14px;
+}
+
+.valores li:last-child,
+.about-section ul li:last-child {
+    border-bottom: none;
+}
+
+/* Explore button */
+.explore-button,
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    margin-top: var(--space-md);
 }
 
-.explore-button:hover {
-    background-color: #4bc5d5; /* Color al pasar el ratón */
+.explore-button:hover,
+.cta-button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
 }
 
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #ccc;
+/* Responsive */
+@media (max-width: 768px) {
+    .about-section {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .about-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .mission, .vision {
+        width: 100%;
+        padding: var(--space-md);
+    }
+
+    .about-content,
+    .container > section,
+    .quienes-somos,
+    .historia {
+        padding: var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.3rem;
+    }
 }

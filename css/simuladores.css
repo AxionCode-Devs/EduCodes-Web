@@ -1,114 +1,123 @@
-/* Estilos del main y simuladores */
-main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
+/* =========================================================================
+   Simuladores Page — EduCodes Premium
+   ========================================================================= */
 
-.simuladores {
+.simuladores-section {
+    padding: var(--space-xl) var(--space-sm);
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
 }
 
-.simulador {
-    background-color: #2b1e5e; /* Color mejorado para el fondo del simulador */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
+.simuladores-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    background: linear-gradient(135deg, #ffffff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.simuladores-section > p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
     max-width: 600px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra ajustada */
-    transition: transform 0.3s ease;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+}
+
+.simuladores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-md);
+    text-align: left;
+}
+
+.simulador {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    text-align: center;
+    width: 100%;
 }
 
 .simulador:hover {
-    transform: scale(1.02);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
 }
 
-.simulador img {
-    max-width: 100%; /* Imagen ajustable */
-    border-radius: 8px; /* Bordes redondeados */
-}
-
-.simulador h3 {
-    color: #f0f0f0;
+.simulador h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: var(--space-xs);
 }
 
 .simulador p {
-    color: #d0d0d0;
-    font-size: 16px;
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.simulador img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: var(--space-sm);
+    border-radius: var(--radius-md);
 }
 
 .btn-simulador {
-    display: inline-block;
-    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
     background-color: var(--accent-primary);
     color: white;
-    padding: 12px 28px;
+    border: none;
     border-radius: 30px;
-    text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    border: none;
+    text-decoration: none;
     cursor: pointer;
     transition: var(--transition-normal);
     box-shadow: var(--shadow-sm);
+    margin-top: var(--space-sm);
 }
 
 .btn-simulador:hover {
     background-color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-glow);
 }
 
-/* Estilo de la ventana emergente */
-.access-denied-message {
-    display: none; /* Inicialmente no se muestra */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #1a094a; /* Color de fondo morado oscuro */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
-    z-index: 1100; /* Asegúrate de que esté encima */
-    opacity: 0; /* Inicialmente invisible */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+/* Responsive */
+@media (max-width: 768px) {
+    .simuladores-section {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .simuladores-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .simuladores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .simulador {
+        padding: var(--space-md);
+    }
 }
 
-/* Mostrar la ventana con animación */
-.access-denied-message.show {
-    display: block; /* Cambia a bloque cuando se muestra */
-    opacity: 1; /* Hacer visible */
-    transform: translate(-50%, -50%) scale(1); /* Mantener posición central */
-}
-
-/* Texto del mensaje */
-.access-denied-message p {
-    color: #5ce1e6; /* Color del texto */
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* Botones */
-.access-denied-buttons {
-    display: flex;
-    justify-content: space-between; /* Espacio entre botones */
-}
-
-.access-denied-button {
-    background-color: #5ce1e6; /* Color de fondo de los botones */
-    color: #1a094a; /* Color del texto */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-}
-
-.access-denied-button:hover {
-    background-color: #4ac0c9; /* Color de fondo al pasar el ratón */
+@media (max-width: 480px) {
+    .simuladores-section h1 {
+        font-size: 1.5rem;
+    }
 }

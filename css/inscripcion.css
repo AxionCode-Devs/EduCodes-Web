@@ -1,153 +1,168 @@
+/* =========================================================================
+   Inscripción Page — EduCodes Premium
+   ========================================================================= */
 
-
-/* Sección del formulario */
-.form-section {
-    min-height: calc(100vh - 200px);
+.inscription-page {
+    min-height: calc(100vh - 90px);
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 4rem 2rem;
-    background: radial-gradient(circle at center, var(--secondary-color), var(--primary-color));
-}
-
-.form-box {
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 3rem;
-    width: 100%;
-    max-width: 1000px;
-    box-shadow: var(--shadow);
-    transform: translateY(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.7);
-}
-
-.form-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--text-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    justify-content: center;
+    padding: var(--space-xl) var(--space-sm);
     position: relative;
 }
 
-.form-title::after {
+.inscription-page::before {
     content: '';
     position: absolute;
-    bottom: -10px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 111, 97, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 700px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl) var(--space-lg);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.form-box h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--space-xs);
+    background: linear-gradient(135deg, #ffffff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-box h2::after {
+    content: '';
+    display: block;
+    width: 60px;
     height: 3px;
-    background: var(--accent-color);
+    background: var(--accent-primary);
+    margin: var(--space-sm) auto 0;
+    border-radius: 2px;
+}
+
+.form-box .form-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: var(--space-lg);
 }
 
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm) var(--space-md);
 }
 
-.form-group {
-    position: relative;
-}
-
-.form-group.full-width {
+.form-grid .full-width {
     grid-column: 1 / -1;
 }
 
-.form-group label {
+.form-box label {
     display: block;
-    margin-bottom: 0.5rem;
+    font-size: 14px;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--text-muted);
+    margin-bottom: 6px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-box input,
+.form-box select,
+.form-box textarea {
     width: 100%;
-    padding: 1rem;
-    border: 2px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    background: var(--input-bg);
-    color: var(--text-color);
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+    font-size: 15px;
+    font-family: inherit;
+    transition: var(--transition-fast);
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-box input:focus,
+.form-box select:focus,
+.form-box textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 15px rgba(255,111,97,0.3);
-    background: rgba(255,255,255,0.1);
+    border-color: var(--accent-primary);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.15);
 }
 
-.form-group textarea {
-    height: 120px;
-    resize: vertical;
+.form-box input::placeholder,
+.form-box textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
 }
 
-.form-group input:required + label::after,
-.form-group select:required + label::after,
-.form-group textarea:required + label::after {
-    content: ' *';
-    color: var(--accent-color);
+.form-box select {
+    appearance: none;
+    cursor: pointer;
 }
 
-.submit-btn {
-    background: linear-gradient(45deg, var(--accent-color), #f07849);
+.form-box select option {
+    background: var(--bg-secondary);
+    color: var(--text-main);
+}
+
+.submit-btn,
+.form-box button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-hover));
     color: white;
     border: none;
-    padding: 1rem 3rem;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 2rem;
-    width: 100%;
-    max-width: 300px;
-    box-shadow: 0 4px 15px rgba(255,111,97,0.3);
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-glow);
+    margin-top: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.submit-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(255,111,97,0.4);
-}
-
-.form-actions {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.form-box {
-    animation: fadeIn 0.6s ease-out;
+.submit-btn:hover,
+.form-box button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 111, 97, 0.5);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .form-box {
+        padding: var(--space-lg) var(--space-md);
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
     }
 
-    .nav-links {
-        display: none;
+    .form-box h2 {
+        font-size: 1.5rem;
     }
+}
 
+@media (max-width: 480px) {
     .form-box {
-        padding: 2rem;
-    }
-
-    .form-title {
-        font-size: 2rem;
+        padding: var(--space-md);
     }
 }

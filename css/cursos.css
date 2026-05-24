@@ -1,137 +1,189 @@
-
-
+/* =========================================================================
+   Cursos Page — EduCodes Premium
+   ========================================================================= */
 
 .cursos-section {
-    padding: 80px 20px;
-    background-color: #1a094a;
+    padding: var(--space-xl) var(--space-sm);
     text-align: center;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .cursos-section h2 {
-    font-size: 42px;
-    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    background: linear-gradient(135deg, #ffffff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.cursos-container {
+.cursos-section > p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+}
+
+.cursos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.curso-card {
-    background-color: #3b237e;
-    padding: 20px;
-    border-radius: 15px;
-    width: 100%; /* Reducido el ancho para asegurar alineación */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    gap: var(--space-md);
     text-align: left;
+}
+
+.curso-card,
+.curso {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
     position: relative;
-    min-height: 350px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.curso-card:hover {
-    transform: scale(1.05); /* Suave aumento de tamaño */
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.6);
+.curso-card:hover,
+.curso:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
 }
 
-.curso-card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
+.curso-card h3,
+.curso h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: var(--space-xs);
 }
 
-.curso-card .nivel {
-    font-weight: bold;
-    margin-bottom: 10px;
+.curso-card p,
+.curso p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+    flex-grow: 1;
+}
+
+.curso-card .nivel,
+.curso .nivel {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    background: rgba(255, 111, 97, 0.15);
+    color: var(--accent-primary);
 }
 
 .rating {
-    margin-bottom: 10px;
-}
-
-.star {
-    color: #f5c518;
-    font-size: 20px;
-    margin-right: 5px;
-}
-
-.curso-card .descripcion {
+    color: #ffd700;
     font-size: 14px;
-    line-height: 1.6;
-}
-
-.curso-card.bloqueado {
-    opacity: 0.6;
-    position: relative;
-}
-
-.lock-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.lock-icon img {
-    width: 40px;
-    height: 40px;
+    margin-bottom: var(--space-sm);
+    letter-spacing: 2px;
 }
 
 .sticker {
-    background-color: #ff4caf50; /* Verde para indicar gratis */
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    font-weight: bold;
+    top: 16px;
+    right: 16px;
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.curso-card.gratuito .sticker {
-    background-color: #ff4caf50; /* Verde para cursos gratuitos */
+.sticker.gratis,
+.sticker[style*="4caf50"],
+.sticker[style*="green"] {
+    background: rgba(76, 175, 80, 0.15);
+    color: var(--success);
 }
 
-.curso-card.pago .sticker {
-    background-color: #ff5722; /* Naranja para cursos de pago */
+.sticker.pago,
+.sticker[style*="ff6f61"],
+.sticker[style*="FF6F61"] {
+    background: rgba(255, 111, 97, 0.15);
+    color: var(--accent-primary);
 }
 
-.curso-card .emoji {
-    display: none; /* Ocultamos el emoji por defecto */
+.curso-btn,
+.curso a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    align-self: flex-start;
 }
 
-.curso-card:hover .emoji {
-    display: inline; /* Mostramos el emoji solo en hover */
+.curso-btn:hover,
+.curso a:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
 }
 
-.curso {
-    border: 1px solid #ccc; /* Borde del recuadro */
-    padding: 15px; /* Espaciado interno del recuadro */
-    margin: 10px; /* Margen entre cursos */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra del recuadro */
+/* Lock icon for restricted courses */
+.curso-card.bloqueado,
+.curso.bloqueado {
+    opacity: 0.7;
 }
 
-.curso-btn {
-    background-color: #ffffff; /* Color de fondo */
-    color: rgb(0, 0, 0); /* Color del texto */
-    border: none; /* Sin borde */
-    padding: 15px 20px; /* Espaciado interno aumentado */
-    text-align: center; /* Centrar texto */
-    text-decoration: none; /* Sin subrayado */
-    display: inline-block; /* Mostrar como bloque en línea */
-    font-size: 18px; /* Tamaño de la fuente aumentado */
-    margin-top: 15px; /* Margen superior */
-    cursor: pointer; /* Cambiar cursor al pasar */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave */
-    width: 40%; /* Ancho completo del contenedor */
+.curso-card.bloqueado .curso-btn,
+.curso.bloqueado .curso-btn {
+    background-color: var(--bg-hover);
+    cursor: not-allowed;
 }
 
-/* Estilo para el botón al pasar el mouse */
-.curso-btn:hover {
-    background-color: #d3d3d3; /* Color de fondo al pasar el mouse */
+/* Responsive */
+@media (max-width: 1024px) {
+    .cursos-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cursos-section {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .cursos-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .cursos-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cursos-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .curso-card, .curso {
+        padding: var(--space-sm);
+    }
 }

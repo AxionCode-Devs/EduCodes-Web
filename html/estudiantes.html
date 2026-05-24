@@ -7,8 +7,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/global.css?v=1.2">
-    <link rel="stylesheet" href="../css/estudiantes.css">
+    <link rel="stylesheet" href="../css/global.css?v=2.0">
+<link rel="stylesheet" href="../css/estudiantes.css">
+    <script src="../js/auth.js" defer></script>
     <script>
         window.onload = function() {
             const role = localStorage.getItem('role'); // Verifica el rol del usuario
@@ -25,14 +26,20 @@
             window.location.href = '../html/login.html'; // Redirigir a la página de login
         }
     </script>
+    <script src="../javascript/navbar.js?v=2.0"></script>
 </head>
 <body>
     <header>
-        <div class="navbar">
+        <nav class="navbar">
             <div class="logo">
                 <img src="../imagenes/educode_logo.png" alt="Logo Plataforma">
                 <h1>Admin Plataforma</h1>
             </div>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="inicio.html">Inicio</a></li>
                 <li><a href="gestcursos.html">Cursos</a></li>
@@ -40,7 +47,7 @@
                 <li><a href="configuracion.html">Configuración</a></li>
             </ul>
             <a href="#" class="login-btn" onclick="logout()">Cerrar Sesión</a>
-        </div>
+        </nav>
     </header>
 
     <section class="admin-content">
