@@ -2,21 +2,20 @@
    Admin Panel — EduCodes Premium (Dark Theme)
    ========================================================================= */
 
-.admin-section {
+.admin-section, .admin-content {
     padding: var(--space-xl) var(--space-sm);
     max-width: 1100px;
     margin: 0 auto;
 }
 
-.admin-section h1,
-.admin-section h2 {
+.admin-section h1, .admin-section h2, .admin-content h1, .admin-content h2 {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--text-main);
     margin-bottom: var(--space-md);
 }
 
-.admin-section h3 {
+.admin-section h3, .admin-content h3 {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-main);
@@ -61,13 +60,13 @@
 }
 
 /* Admin tables */
-.admin-section table {
+.admin-section table, .admin-content table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: var(--space-md);
 }
 
-.admin-section th {
+.admin-section th, .admin-content th {
     text-align: left;
     padding: 12px 16px;
     background: rgba(255, 255, 255, 0.03);
@@ -79,20 +78,19 @@
     border-bottom: 1px solid var(--glass-border);
 }
 
-.admin-section td {
+.admin-section td, .admin-content td {
     padding: 12px 16px;
     color: var(--text-main);
     font-size: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.admin-section tr:hover td {
+.admin-section tr:hover td, .admin-content tr:hover td {
     background: rgba(255, 255, 255, 0.02);
 }
 
 /* Admin images scoped */
-.admin-section .admin-logo,
-.admin-section .logo-img {
+.admin-section .admin-logo, .admin-section .logo-img, .admin-content .admin-logo, .admin-content .logo-img {
     width: 80px;
     height: 80px;
     object-fit: contain;
@@ -101,7 +99,7 @@
 }
 
 /* Admin buttons */
-.admin-btn {
+.admin-btn, .cta-btn {
     padding: 10px 24px;
     background-color: var(--accent-primary);
     color: white;
@@ -117,19 +115,19 @@
     gap: 6px;
 }
 
-.admin-btn:hover {
+.admin-btn:hover, .cta-btn:hover {
     background-color: var(--accent-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-glow);
 }
 
-.admin-btn.secondary {
+.admin-btn.secondary, .cta-btn.secondary {
     background: transparent;
     color: var(--text-main);
     border: 1px solid var(--glass-border);
 }
 
-.admin-btn.secondary:hover {
+.admin-btn.secondary:hover, .cta-btn.secondary:hover {
     border-color: var(--accent-primary);
     color: var(--accent-primary);
 }
@@ -144,7 +142,6 @@
 }
 
 /* About section (admin) */
-.about,
 .about-container {
     background: var(--bg-card);
     border: 1px solid var(--glass-border);
@@ -155,13 +152,11 @@
     margin: 0 auto;
 }
 
-.about h2,
 .about-container h2 {
     font-size: 1.5rem;
     margin-bottom: var(--space-sm);
 }
 
-.about p,
 .about-container p {
     color: var(--text-muted);
     line-height: 1.7;
@@ -170,7 +165,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .admin-section {
+    .admin-section, .admin-content {
         padding: var(--space-lg) var(--space-sm);
     }
 
@@ -178,12 +173,12 @@
         grid-template-columns: 1fr;
     }
 
-    .admin-section table {
+    .admin-section table, .admin-content table {
         display: block;
         overflow-x: auto;
     }
 
-    .admin-section h1, .admin-section h2 {
+    .admin-section h1, .admin-section h2, .admin-content h1, .admin-content h2 {
         font-size: 1.5rem;
     }
 }

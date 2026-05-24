@@ -74,6 +74,7 @@
 
 /* Content sections */
 .about-content,
+.about-section > section,
 .container > section,
 .quienes-somos,
 .historia {

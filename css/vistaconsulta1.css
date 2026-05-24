@@ -2,6 +2,7 @@
    Vista Consulta Page — EduCodes Premium
    ========================================================================= */
 
+.consulta,
 .consulta-container {
     max-width: 900px;
     margin: 0 auto;
@@ -51,7 +52,9 @@
 }
 
 /* Answers Section */
-.respuestas-section h2 {
+.respuestas-section h2,
+.respuestas-seccion h2,
+.respuestas-seccion h3 {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-main);
@@ -197,6 +200,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .consulta,
     .consulta-container {
         padding: var(--space-lg) var(--space-sm);
     }

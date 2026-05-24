@@ -54,15 +54,27 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-main);
     color: var(--text-main);
-    overflow-x: hidden;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     padding-top: 90px; /* Evita que el fixed header tape el contenido */
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
 
 /* Scrollbar estilizada */
 ::-webkit-scrollbar {
@@ -514,7 +526,19 @@ footer a:hover {
 }
 
 /* Form Input */
-.form-input {
+.form-input,
+.admin-item input[type="text"],
+.admin-item input[type="email"],
+.admin-item input[type="password"],
+.admin-item input[type="number"],
+.admin-item textarea,
+.admin-item select,
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="password"],
+.form-section textarea,
+.form-comentario textarea,
+.comment-form textarea {
     width: 100%;
     padding: 14px 18px;
     background: rgba(255, 255, 255, 0.05);
@@ -526,7 +550,19 @@ footer a:hover {
     transition: var(--transition-fast);
 }
 
-.form-input:focus {
+.form-input:focus,
+.admin-item input[type="text"]:focus,
+.admin-item input[type="email"]:focus,
+.admin-item input[type="password"]:focus,
+.admin-item input[type="number"]:focus,
+.admin-item textarea:focus,
+.admin-item select:focus,
+.form-section input[type="text"]:focus,
+.form-section input[type="email"]:focus,
+.form-section input[type="password"]:focus,
+.form-section textarea:focus,
+.form-comentario textarea:focus,
+.comment-form textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
     background: rgba(255, 255, 255, 0.08);
